@@ -1,183 +1,51 @@
-#video-background-1{
-    position: absolute;   /* Rola com a página */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -2;
-    
-    
+/* Estilos específicos da página de materias, mantendo imagens clicáveis em grid responsivo */
+
+.section_materias{
+ 
+  margin-top: 50px;
 }
 
-.Menu{
-    background-color: rgba(0, 0, 0, 0.5); 
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    display: inline-block;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    transform-origin: center;
-    font-family: 'Cocogoose', sans-serif;
-    font-size: 22px;
-    
-}
-.Menu:hover{
-    transform: translateY(-2px) scale(1.06);
-    background-color: rgba(255, 255, 255, 0.8); 
-    color: #000;
-    
+.materias__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 160px;
 }
 
-.overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.30); 
-    z-index: -1;
+.materia__card {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  display: grid;
+  gap: 10px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.Portugues{
-    position: absolute;
-    top: 150px;
-    left: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    transform-origin: center;
+.materia__card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.Portugues:hover{
-    transform: translateY(-2px) scale(1.06);
-    background-color: rgba(255, 255, 255, 0.8); 
-    color: #000;
+.materia__card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
 }
 
-
-.Titulo_1{
-    position: absolute;
-    bottom: 450px;
-    left: 300px;
-    Font-family: 'Paper Noise', sans-serif;
-    text-shadow: #000 1px 1px 25px;
-
-    
+.materia__title {
+  font-size: 25px;
+  font-family: "Paper Noise", sans-serif;
+  text-shadow: #000 1px 1px 14px;
 }
 
-.Matematica{
-    position: absolute;
-    top: 150px;
-    left: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    transform-origin: center;
-}
-
-.Matematica:hover{
-    transform: translateY(-2px) scale(1.06);
-    background-color: rgba(255, 255, 255, 0.8); 
-    color: #000;
-}
-
-.Titulo_2{
-    position: absolute;
-    bottom: 450px;
-    left: 840px;
-    Font-family: 'Paper Noise', sans-serif;
-    text-shadow: #000 1px 1px 25px;
-    
-    
-}
-
-.Natureza{
-    position: absolute;
-    top: 150px;
-    right: 330px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    transform-origin: center;
-    
-    
-}
-.Natureza:hover{
-    transform: translateY(-2px) scale(1.06);
-    background-color: rgba(255, 255, 255, 0.8); 
-    color: #000;
-}
-
-
-
-.Titulo_3{
-    position: absolute;
-    bottom: 450px;
-    right: 390px;
-    Font-family: 'Paper Noise', sans-serif;
-    text-shadow: #000 1px 1px 25px;
-    
-}
-
-.Humanas{
-    position: absolute;
-    top: 540px;
-    left:500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    transform-origin: center;
-}
-.Humanas:hover{
-    transform: translateY(-2px) scale(1.06);
-    background-color: rgba(255, 255, 255, 0.8); 
-    color: #000;
-}
-
-.Titulo_4{
-    position: absolute;
-    bottom: 60px;
-    left: 550px;
-    Font-family: 'Paper Noise', sans-serif;
-    text-shadow: #000 1px 1px 25px;
-}
-
-.Tecnico{
-    position: absolute;
-    top: 540px;
-    left: 1100px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    transform-origin: center;
-}
-.Tecnico:hover{
-    transform: translateY(-2px) scale(1.06);
-    background-color: rgba(255, 255, 255, 0.8); 
-    color: #000;
-}
-
-.Titulo_5{
-    position: absolute;
-    bottom: 60px;
-    left: 1175px;
-    Font-family: 'Paper Noise', sans-serif;
-    text-shadow: #000 1px 1px 25px;
+@media screen and (max-width: 720px) {
+  .materia__card img {
+    height: 150px;
+  }
 }

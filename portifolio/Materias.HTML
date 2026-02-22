@@ -4,49 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matérias</title>
-    <link rel="stylesheet" href="Materias.CSS">
     <link rel="stylesheet" href="index.CSS">
-
+    <link rel="stylesheet" href="Materias.CSS">
 </head>
-<body class="no-scroll">
-
-    <video id="video-background-1" autoplay muted loop playsinline poster="Video/bg-poster.jpg">
+<body>
+    <video class="bg-video" autoplay muted loop playsinline poster="Video/bg-poster.jpg">
         <source src="Video/Tela_de_Fundo.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
 
-    <nav class="Nav_Menu">
-        <li class="Menu_Item"><a class="Menu_Link" href="index.HTML">Menu</a></li>
-    </nav>
- 
-     
-        <a href="Portugues.HTML"><img class="Portugues" src="Fotos_matérias/Portugues.png" alt=""></a>
+    <main class="page">
+        <header class="top-bar">
+            <nav class="Nav_Menu">
+                <ul>
+                    <li class="Menu_Item"><a class="Menu_portifolios" href="Portifolio.HTML">Portfólios</a></li>
+                    <li class="Menu_Item"><a class="Menu_Link_Materias" href="Materias.HTML">Matérias</a></li>
+                    <li class="Menu_Item"><a class="Menu_Link" href="index.HTML">Menu</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <h1 class="Titulo_1">Português</h1>
+        <section class="section_materias">
+            
+            <div class="materias__grid">
+                <a class="materia__card" href="Portugues.HTML">
+                    <img src="Fotos_matérias/Portugues.png" alt="Português">
+                    <span class="materia__title">Português</span>
+                </a>
 
-        <a href="Matematica.HTML"><img class="Matematica" src="Fotos_matérias/Matematica.png" alt=""></a>
+                <a class="materia__card" href="Matematica.HTML">
+                    <img src="Fotos_matérias/Matematica.png" alt="Matemática">
+                    <span class="materia__title">Matemática</span>
+                </a>
 
-        <h1 class="Titulo_2">Matemática</h1>
+                <a class="materia__card" href="Natureza.HTML">
+                    <img src="Fotos_matérias/Natureza.png" alt="Natureza">
+                    <span class="materia__title">Natureza</span>
+                </a>
 
-        <a href="Natureza.HTML"><img class="Natureza" src="Fotos_matérias/Natureza.png" alt=""></a>
+                <a class="materia__card" href="Humanas.HTML">
+                    <img src="Fotos_matérias/Humanas.png" alt="Humanas">
+                    <span class="materia__title">Humanas</span>
+                </a>
 
-        <h1 class="Titulo_3">Natureza</h1>
-
-        <a href="Humanas.HTML"><img class="Humanas" src="Fotos_matérias/Humanas.png" alt=""></a>
-
-        <h1 class="Titulo_4">Humanas</h1>
-
-        <a href="Tecnico.HTML"><img class="Tecnico" src="Fotos_matérias/Técnico.png" alt=""></a>
-
-        <h1 class="Titulo_5">Técnico</h1>
-    
-
-
-
-
-
-
-
-    
+                <a class="materia__card" href="Tecnico.HTML">
+                    <img src="Fotos_matérias/Técnico.png" alt="Técnico">
+                    <span class="materia__title">Técnico</span>
+                </a>
+                <a class="materia__card" href="PPE.HTML">
+                    <img src="Fotos_matérias/PPE.png" alt="PPE">
+                    <span class="materia__title">PPE</span>
+                </a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
