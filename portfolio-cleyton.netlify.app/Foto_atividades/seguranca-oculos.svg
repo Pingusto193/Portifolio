@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <!-- White background -->
+  <rect width="1200" height="675" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="60" y="62" font-family="Arial Black, sans-serif" font-size="38" font-weight="900" fill="#111111">Segurança de Dados em Óculos Inteligentes</text>
+
+  <!-- Outer border -->
+  <rect x="40" y="80" width="1120" height="560" fill="none" stroke="#333333" stroke-width="2"/>
+
+  <!-- Top row: 5 columns dividers -->
+  <!-- Col 1: Problema (x=40, w=200) -->
+  <rect x="40" y="80" width="200" height="310" fill="none" stroke="#333333" stroke-width="1.5"/>
+  <!-- Col 2: Solução (x=240, w=220) split into 2 rows -->
+  <rect x="240" y="80" width="220" height="180" fill="none" stroke="#333333" stroke-width="1.5"/>
+  <rect x="240" y="260" width="220" height="130" fill="none" stroke="#333333" stroke-width="1.5"/>
+  <!-- Col 3: Proposta única de valor (x=460, w=220) -->
+  <rect x="460" y="80" width="220" height="310" fill="none" stroke="#333333" stroke-width="1.5"/>
+  <!-- Col 4: Vantagem injusta + Canais (x=680, w=220) split -->
+  <rect x="680" y="80" width="220" height="180" fill="none" stroke="#333333" stroke-width="1.5"/>
+  <rect x="680" y="260" width="220" height="130" fill="none" stroke="#333333" stroke-width="1.5"/>
+  <!-- Col 5: Segmentos (x=900, w=260) -->
+  <rect x="900" y="80" width="260" height="310" fill="none" stroke="#333333" stroke-width="1.5"/>
+
+  <!-- Bottom row: Estrutura de custos + Fontes de receita + post-it bônus -->
+  <rect x="40" y="390" width="450" height="250" fill="none" stroke="#333333" stroke-width="1.5"/>
+  <rect x="490" y="390" width="450" height="250" fill="none" stroke="#333333" stroke-width="1.5"/>
+  <rect x="940" y="390" width="220" height="250" fill="none" stroke="#333333" stroke-width="1.5"/>
+
+  <!-- === SECTION HEADERS === -->
+  <text x="52" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111">Problema</text>
+  <text x="252" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111">Solução</text>
+  <text x="472" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111">Proposta única de valor</text>
+  <text x="692" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111">Vantagem injusta</text>
+  <text x="252" y="278" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111">Métricas-chave</text>
+  <text x="692" y="278" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111">Canais</text>
+  <text x="912" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111">Segmentos de clientes</text>
+  <text x="52" y="413" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111">Estrutura de custos</text>
+  <text x="502" y="413" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111">Fontes de receita</text>
+  <text x="952" y="413" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111">post-it bônus</text>
+
+  <!-- === PROBLEMA content === -->
+  <text x="52" y="130" font-family="Arial, sans-serif" font-size="10" fill="#333">• Risco de vazamento de dados</text>
+  <text x="52" y="148" font-family="Arial, sans-serif" font-size="10" fill="#333">  no uso de smart glasses com IA</text>
+  <text x="52" y="166" font-family="Arial, sans-serif" font-size="10" fill="#333">• Falta de controle contínuo</text>
+  <text x="52" y="184" font-family="Arial, sans-serif" font-size="10" fill="#333">  do usuário durante o uso</text>
+  <text x="52" y="202" font-family="Arial, sans-serif" font-size="10" fill="#333">• Exposição de dados sensíveis</text>
+  <text x="52" y="220" font-family="Arial, sans-serif" font-size="10" fill="#333">  para IA ou terceiros</text>
+  <text x="52" y="238" font-family="Arial, sans-serif" font-size="10" fill="#333">• Dispositivos podem ser usados</text>
+  <text x="52" y="256" font-family="Arial, sans-serif" font-size="10" fill="#333">  por pessoas não autorizadas</text>
+
+  <!-- === SOLUÇÃO content === -->
+  <text x="252" y="124" font-family="Arial, sans-serif" font-size="10" fill="#333">• Autenticação por íris + vivacidade</text>
+  <text x="252" y="140" font-family="Arial, sans-serif" font-size="10" fill="#333">• Confirmação de presença física</text>
+  <text x="252" y="156" font-family="Arial, sans-serif" font-size="10" fill="#333">• Autenticação contínua no uso</text>
+  <text x="252" y="172" font-family="Arial, sans-serif" font-size="10" fill="#333">• Criptografia de dados</text>
+  <text x="252" y="188" font-family="Arial, sans-serif" font-size="10" fill="#333">• Controle de acesso por função</text>
+  <text x="252" y="204" font-family="Arial, sans-serif" font-size="10" fill="#333">• Camada intermediária segura</text>
+  <text x="252" y="220" font-family="Arial, sans-serif" font-size="10" fill="#333">• Auditoria completa com logs</text>
+  <text x="252" y="236" font-family="Arial, sans-serif" font-size="10" fill="#333">• Recursos de acessibilidade</text>
+
+  <!-- === MÉTRICAS content === -->
+  <text x="252" y="298" font-family="Arial, sans-serif" font-size="10" fill="#333">• Nº de acessos seguros realizados</text>
+  <text x="252" y="314" font-family="Arial, sans-serif" font-size="10" fill="#333">• Tentativas de invasão bloqueadas</text>
+  <text x="252" y="330" font-family="Arial, sans-serif" font-size="10" fill="#333">• Tempo médio de uso seguro</text>
+  <text x="252" y="346" font-family="Arial, sans-serif" font-size="10" fill="#333">• Incidentes de segurança evitados</text>
+  <text x="252" y="362" font-family="Arial, sans-serif" font-size="10" fill="#333">• Taxa de adoção pelos usuários</text>
+
+  <!-- === PROPOSTA ÚNICA DE VALOR content === -->
+  <text x="472" y="132" font-family="Arial, sans-serif" font-size="10" fill="#333">• Smart glasses com IA</text>
+  <text x="472" y="148" font-family="Arial, sans-serif" font-size="10" fill="#333">  totalmente seguros, com</text>
+  <text x="472" y="164" font-family="Arial, sans-serif" font-size="10" fill="#333">  autenticação contínua e</text>
+  <text x="472" y="180" font-family="Arial, sans-serif" font-size="10" fill="#333">  proteção inteligente de</text>
+  <text x="472" y="196" font-family="Arial, sans-serif" font-size="10" fill="#333">  dados corporativos.</text>
+  <text x="472" y="220" font-family="Arial, sans-serif" font-size="10" fill="#333">• Segurança em tempo real</text>
+  <text x="472" y="238" font-family="Arial, sans-serif" font-size="10" fill="#333">• Zero confiança (zero trust)</text>
+  <text x="472" y="256" font-family="Arial, sans-serif" font-size="10" fill="#333">• Inclusão com acessibilidade</text>
+  <text x="472" y="274" font-family="Arial, sans-serif" font-size="10" fill="#333">  integrada</text>
+
+  <!-- === VANTAGEM INJUSTA content === -->
+  <text x="692" y="124" font-family="Arial, sans-serif" font-size="10" fill="#333">• Autenticação contínua</text>
+  <text x="692" y="140" font-family="Arial, sans-serif" font-size="10" fill="#333">• Integração com IA sem exposição</text>
+  <text x="692" y="156" font-family="Arial, sans-serif" font-size="10" fill="#333">• Arquitetura em múltiplas camadas</text>
+  <text x="692" y="172" font-family="Arial, sans-serif" font-size="10" fill="#333">• Uso de sinais fisiológicos</text>
+  <text x="692" y="188" font-family="Arial, sans-serif" font-size="10" fill="#333">  como validação</text>
+  <text x="692" y="204" font-family="Arial, sans-serif" font-size="10" fill="#333">• Inclusão como parte da</text>
+  <text x="692" y="220" font-family="Arial, sans-serif" font-size="10" fill="#333">  segurança (menos erro humano)</text>
+
+  <!-- === CANAIS content === -->
+  <text x="692" y="298" font-family="Arial, sans-serif" font-size="10" fill="#333">• Smart glasses corporativos</text>
+  <text x="692" y="314" font-family="Arial, sans-serif" font-size="10" fill="#333">• Sistemas internos da empresa</text>
+  <text x="692" y="330" font-family="Arial, sans-serif" font-size="10" fill="#333">• Plataformas de IA integradas</text>
+  <text x="692" y="346" font-family="Arial, sans-serif" font-size="10" fill="#333">• Rede corporativa segura</text>
+
+  <!-- === SEGMENTOS content === -->
+  <text x="912" y="130" font-family="Arial, sans-serif" font-size="10" fill="#333">• Funcionários da Petrobras</text>
+  <text x="912" y="148" font-family="Arial, sans-serif" font-size="10" fill="#333">• Equipes de campo e manutenção</text>
+  <text x="912" y="166" font-family="Arial, sans-serif" font-size="10" fill="#333">• Profissionais que utilizam IA</text>
+  <text x="912" y="184" font-family="Arial, sans-serif" font-size="10" fill="#333">  e realidade aumentada</text>
+  <text x="912" y="202" font-family="Arial, sans-serif" font-size="10" fill="#333">• Área de TI e segurança</text>
+  <text x="912" y="220" font-family="Arial, sans-serif" font-size="10" fill="#333">  da informação</text>
+
+  <!-- === ESTRUTURA DE CUSTOS content === -->
+  <text x="52" y="436" font-family="Arial, sans-serif" font-size="10" fill="#333">• Desenvolvimento da arquitetura</text>
+  <text x="52" y="454" font-family="Arial, sans-serif" font-size="10" fill="#333">• Implementação de sensores e biometria</text>
+  <text x="52" y="472" font-family="Arial, sans-serif" font-size="10" fill="#333">• Infraestrutura de segurança (servidores, criptografia)</text>
+  <text x="52" y="490" font-family="Arial, sans-serif" font-size="10" fill="#333">• Testes e validações</text>
+  <text x="52" y="508" font-family="Arial, sans-serif" font-size="10" fill="#333">• Treinamento de usuários</text>
+  <text x="52" y="526" font-family="Arial, sans-serif" font-size="10" fill="#333">• Manutenção do sistema</text>
+
+  <!-- === FONTES DE RECEITA content === -->
+  <text x="502" y="436" font-family="Arial, sans-serif" font-size="10" fill="#333">• Redução de prejuízos com vazamento de dados</text>
+  <text x="502" y="454" font-family="Arial, sans-serif" font-size="10" fill="#333">• Aumento da eficiência operacional</text>
+  <text x="502" y="472" font-family="Arial, sans-serif" font-size="10" fill="#333">• Redução de riscos de segurança</text>
+  <text x="502" y="490" font-family="Arial, sans-serif" font-size="10" fill="#333">• Conformidade com normas (compliance)</text>
+  <text x="502" y="508" font-family="Arial, sans-serif" font-size="10" fill="#333">• Economia com incidentes evitados</text>
+
+  <!-- === POST-IT BÔNUS content === -->
+  <text x="952" y="436" font-family="Arial, sans-serif" font-size="10" fill="#333">• Modo emergência</text>
+  <text x="952" y="454" font-family="Arial, sans-serif" font-size="10" fill="#333">• IA local (edge AI)</text>
+  <text x="952" y="472" font-family="Arial, sans-serif" font-size="10" fill="#333">• Detecção de comportamento</text>
+  <text x="952" y="488" font-family="Arial, sans-serif" font-size="10" fill="#333">  suspeito do usuário</text>
+  <text x="952" y="506" font-family="Arial, sans-serif" font-size="10" fill="#333">• Bloqueio automático em</text>
+  <text x="952" y="522" font-family="Arial, sans-serif" font-size="10" fill="#333">  áreas restritas</text>
+  <text x="952" y="540" font-family="Arial, sans-serif" font-size="10" fill="#333">• Painel de monitoramento</text>
+  <text x="952" y="556" font-family="Arial, sans-serif" font-size="10" fill="#333">  em tempo real</text>
+</svg>

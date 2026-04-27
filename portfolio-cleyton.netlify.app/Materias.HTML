@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matérias do portfólio escolar de Cleyton: Português, Matemática, Natureza, Humanas, Técnico e PPE.">
+    <title>Matérias</title>
+    <link rel="stylesheet" href="index.CSS">
+    <link rel="stylesheet" href="Materias.CSS">
+</head>
+<body>
+    <video class="bg-video" autoplay muted loop playsinline poster="https://portfolio-cleyton.netlify.app/Video/bg-poster.jpg">
+        <source src="Video/Tela_de_Fundo.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <main class="page">
+        <header class="top-bar">
+            <nav class="Nav_Menu">
+                <ul>
+                    <li class="Menu_Item"><a class="Menu_portifolios" href="Portifolio.HTML">Portfólios</a></li>
+                    <li class="Menu_Item"><a class="Menu_Link" href="index.HTML">Menu</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="section_materias">
+            <div class="materias__hero">
+                <div class="materias__hero-copy">
+                    <p class="materias__eyebrow">Portfólio Escolar</p>
+                    <h1 class="materias__heading">Minhas matérias</h1>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="materias__carousel">
+                <button class="materias__control materias__control--prev" type="button" aria-label="Ver matérias anteriores">
+                    &#10094;
+                </button>
+
+                <div class="materias__viewport">
+                    <div class="materias__grid">
+                        <a class="materia__card materia__card--portugues" href="Portugues.HTML">
+                            <div class="materia__img-wrapper">
+                                <img src="Fotos_matérias/Portugues.png" alt="Português">
+                            </div>
+                            <div class="materia__body">
+                                <span class="materia__tag">Linguagens</span>
+                                <span class="materia__title">Português</span>
+                               
+                                <p class="materia__text">Letras e muita interpretação :/</p>
+                            </div>
+                        </a>
+
+                        <a class="materia__card materia__card--matematica" href="Matematica.HTML">
+                            <div class="materia__img-wrapper">
+                                <img src="Fotos_matérias/Matematica.png" alt="Matemática">
+                            </div>
+                            <div class="materia__body">
+                                <span class="materia__tag">Exatas</span>
+                                <span class="materia__title">Matemática</span>
+                                
+                                <p class="materia__text">Muitos números e contas divertidas :)</p>
+                            </div>
+                        </a>
+
+                        <a class="materia__card materia__card--natureza" href="Natureza.HTML">
+                            <div class="materia__img-wrapper">
+                                <img src="Fotos_matérias/Natureza.png" alt="Natureza">
+                            </div>
+                            <div class="materia__body">
+                                <span class="materia__tag">Ciências</span>
+                                <span class="materia__title">Natureza</span>
+                                
+                                <p class="materia__text">Como o mundo funciona, muito interessante :)</p>
+                            </div>
+                        </a>
+
+                        <a class="materia__card materia__card--humanas" href="Humanas.HTML">
+                            <div class="materia__img-wrapper">
+                                <img src="Fotos_matérias/Humanas.png" alt="Humanas">
+                            </div>
+                            <div class="materia__body">
+                                <span class="materia__tag">Sociedade</span>
+                                <span class="materia__title">Humanas</span>
+                                
+                                <p class="materia__text">Política, história e guerra :)</p>
+                            </div>
+                        </a>
+
+                        <a class="materia__card materia__card--tecnico" href="Tecnico.HTML">
+                            <div class="materia__img-wrapper">
+                                <img src="Fotos_matérias/Técnico.png" alt="Técnico">
+                            </div>
+                            <div class="materia__body">
+                                <span class="materia__tag">Curso técnico</span>
+                                <span class="materia__title">Técnico</span>
+                                <p class="materia__meta">Seção própria</p>
+                                <p class="materia__text">Me esforçando para trabalhar no meio técnico e na programação :)</p>
+                            </div>
+                        </a>
+
+                        <a class="materia__card materia__card--ppe" href="PPE.HTML">
+                            <div class="materia__img-wrapper">
+                                <img src="Fotos_matérias/PPE.png" alt="PPE">
+                            </div>
+                            <div class="materia__body">
+                                <span class="materia__tag">Projeto</span>
+                                <span class="materia__title">PPE</span>
+                                <p class="materia__meta">Em desenvolvimento</p>
+                                <p class="materia__text">Projeto e Pesquisa Escolar em desenvolvimento.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="materias__control materias__control--next" type="button" aria-label="Ver próximas matérias">
+                    &#10095;
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slider = document.querySelector(".materias__grid");
+            const prevButton = document.querySelector(".materias__control--prev");
+            const nextButton = document.querySelector(".materias__control--next");
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            let isDragging = false;
+
+            if (!slider) {
+                return;
+            }
+
+            const updateControls = () => {
+                if (!prevButton || !nextButton) {
+                    return;
+                }
+
+                const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+                prevButton.disabled = slider.scrollLeft <= 8;
+                nextButton.disabled = slider.scrollLeft >= maxScrollLeft - 8;
+            };
+
+            const scrollCards = (direction) => {
+                const firstCard = slider.querySelector(".materia__card");
+                const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 300;
+                const gap = 28;
+
+                slider.scrollBy({
+                    left: direction * (cardWidth + gap),
+                    behavior: "smooth"
+                });
+            };
+
+            slider.addEventListener("mousedown", (e) => {
+                isDown = true;
+                isDragging = false;
+                slider.style.cursor = "grabbing";
+                slider.style.scrollSnapType = "none";
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener("mouseleave", () => {
+                isDown = false;
+                slider.style.cursor = "grab";
+                slider.style.scrollSnapType = "x mandatory";
+            });
+
+            slider.addEventListener("mouseup", () => {
+                isDown = false;
+                slider.style.cursor = "grab";
+                slider.style.scrollSnapType = "x mandatory";
+            });
+
+            slider.addEventListener("mousemove", (e) => {
+                if (!isDown) return;
+
+                e.preventDefault();
+                isDragging = true;
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+                updateControls();
+            });
+
+            slider.querySelectorAll(".materia__card").forEach((card) => {
+                card.addEventListener("click", (e) => {
+                    if (isDragging) {
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            slider.addEventListener("wheel", (e) => {
+                if (e.deltaY !== 0) {
+                    e.preventDefault();
+                    slider.scrollLeft += e.deltaY;
+                    updateControls();
+                }
+            });
+
+            slider.addEventListener("scroll", updateControls);
+
+            if (prevButton) {
+                prevButton.addEventListener("click", () => scrollCards(-1));
+            }
+
+            if (nextButton) {
+                nextButton.addEventListener("click", () => scrollCards(1));
+            }
+
+            updateControls();
+        });
+    </script>
+</body>
+</html>
