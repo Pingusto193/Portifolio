@@ -336,9 +336,13 @@ function criarCard(materia, atividade) {
 
   const img = document.createElement("img");
   img.className = "img_exemplo";
-  img.src = atividade.imagem || criarImagemFallback(materia, atividade);
   img.alt = `Prévia da atividade ${atividade.nome}`;
   img.loading = "lazy";
+  img.onerror = () => {
+    img.onerror = null;
+    img.src = criarImagemFallback(materia, atividade);
+  };
+  img.src = atividade.imagem || criarImagemFallback(materia, atividade);
   boxImg.appendChild(img);
 
   const descricao = document.createElement("div");
