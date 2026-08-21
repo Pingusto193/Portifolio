@@ -1,15 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Cleyton Rodrigues Pedroza — estudante técnico em desenvolvimento, atividades escolares e objetivos.">
-    <title>Portfólio</title>
+    <meta name="description" content="Portfólio de Cleyton Rodrigues Pedroza — estudante técnico em desenvolvimento de sistemas: atividades escolares, currículo, memorial e objetivos.">
+    <meta name="theme-color" content="#06060c">
+    <meta property="og:title" content="Cleyton Rodrigues Pedroza — Portfólio">
+    <meta property="og:description" content="Atividades escolares, currículo, memorial e objetivos de Cleyton Rodrigues Pedroza.">
+    <meta property="og:type" content="website">
+    <title>Cleyton Rodrigues Pedroza — Portfólio</title>
     <link rel="stylesheet" href="index.CSS">
+    <link rel="stylesheet" href="Experiencia.CSS">
+    <script src="Experiencia.js"></script>
 </head>
 
-<body>
+<body class="pagina-inicio">
     <video class="bg-video" autoplay muted loop playsinline>
         <source src="Video/Tela_de_Fundo.mp4" type="video/mp4">
     </video>
@@ -17,41 +23,81 @@
 
     <main class="page">
         <header class="top-bar">
-            <nav class="Nav_Menu">
+            <span class="marca">
+                <span class="marca__texto">Cleyton Pedroza<span>Portfólio</span></span>
+            </span>
+            <nav class="Nav_Menu" aria-label="Navegação principal">
                 <ul>
-                    <li class="Menu_Item"><a class="Menu_portifolios" href="Portifolio.HTML">Portfólios antigos</a></li>
+                    <li class="Menu_Item"><a class="Menu_Link" href="index.html">Início</a></li>
                     <li class="Menu_Item"><a class="Menu_Link_Materias" href="Materias.HTML">Matérias</a></li>
+                    <li class="Menu_Item"><a class="Menu_portifolios" href="Portifolio.HTML">Portfólios</a></li>
                 </ul>
             </nav>
         </header>
 
-        <section class="section hero">
+        <section class="section hero" id="inicio">
             <div class="section__content hero__content">
                 <div class="hero__text">
-                    <h1 class="Quem_sou_eu">Quem sou eu?</h1>
-                    <p class="Texto_Sobre_Mim">Sou uma pessoa que não gosta de deixar as coisas para depois. Mesmo quando tenho tempo de sobra, prefiro realizar logo as tarefas para me livrar delas. Ao mesmo tempo, acabo procrastinando. Quando isso acontece, lembro que sempre existe alguém que não perdeu para a procrastinação, e isso me faz continuar para não ficar para trás. É como se houvesse uma competição na minha cabeça; gosto da sensação de já ter concluído algo enquanto outros ainda estão fazendo. Também sou um pouco ciumento: quando percebo que estou ficando atrás de alguém em algum aspecto, me esforço ainda mais para tentar passar, mas sempre tentando ser respeitoso.</p>
-                    <div class="hero__meta">
-                        <p class="Meu_Nome">Cleyton Rodrigues Pedroza</p>
-                        <p class="Idade">11/10/2008</p>
+                    <p class="eyebrow" data-entrada="0">Portfólio escolar · SESI SENAI</p>
+                    <h1 class="hero__titulo" data-entrada="1">Cleyton Rodrigues<span>Pedroza</span></h1>
+                    <p class="hero__papel" data-entrada="2">
+                        Estudante de <span class="hero__rotador" data-rotador='["Desenvolvimento de Sistemas","Programação Web","Projetos de IoT","Ensino Médio Técnico"]'>Desenvolvimento de Sistemas</span>
+                    </p>
+                    <p class="hero__lead" data-entrada="3">
+                        Este espaço reúne o que produzi ao longo do curso: atividades por área de
+                        conhecimento, projetos técnicos, currículo e os objetivos que guiam minha
+                        formação.
+                    </p>
+
+                </div>
+
+                <div class="hero__photo" data-entrada="3">
+                    <div class="retrato">
+                        <img class="Foto_oculos" src="Foto_Minha/eu_melhor.JPEG" alt="Cleyton Rodrigues Pedroza" loading="eager">
+                        <span class="retrato__aro" aria-hidden="true"></span>
                     </div>
+                    <p class="retrato__legenda">
+                        <span>Cleyton Rodrigues Pedroza</span>
+                        <span class="retrato__data">11/10/2008</span>
+                    </p>
                 </div>
-                <div class="hero__photo">
-                    <img class="Foto_oculos" src="Foto_Minha/Eu_de_oculos.JPEG" alt="Foto com óculos">
-                </div>
+            </div>
+
+            <a class="rolar" href="#sobre" data-entrada="6">
+                <span class="rolar__texto">Role para conhecer</span>
+                <span class="rolar__trilho" aria-hidden="true"><span class="rolar__ponto"></span></span>
+            </a>
+        </section>
+
+        <section class="section sobre" id="sobre">
+            <div class="section__header">
+                <p class="eyebrow" data-reveal="sobe">01 — Apresentação</p>
+                <h2 class="Quem_sou_eu" data-reveal="sobe">Quem sou eu?</h2>
+            </div>
+            <div class="section__content">
+                <p class="Texto_Sobre_Mim">Sou uma pessoa que não gosta de deixar as coisas para depois. Mesmo quando
+                    tenho tempo de sobra, prefiro realizar logo as tarefas para me livrar delas. Ao mesmo tempo, acabo
+                    procrastinando. Quando isso acontece, lembro que sempre existe alguém que não perdeu para a
+                    procrastinação, e isso me faz continuar para não ficar para trás. É como se houvesse uma competição
+                    na minha cabeça; gosto da sensação de já ter concluído algo enquanto outros ainda estão fazendo.
+                    Também sou um pouco ciumento: quando percebo que estou ficando atrás de alguém em algum aspecto, me
+                    esforço ainda mais para tentar passar, mas sempre tentando ser respeitoso.</p>
             </div>
         </section>
 
-        <section class="section curriculo">
+        <section class="section curriculo" id="curriculo">
             <div class="section__header">
+                <p class="eyebrow" data-reveal="sobe">02 — Trajetória</p>
                 <h2>Currículo</h2>
             </div>
             <div class="section__content curriculo__card">
-                <img class="curriculo__img" src="Foto_Minha/curriculo.png" alt="Currículo de Cleyton Rodrigues Pedroza">
+                <img class="curriculo__img" src="Foto_Minha/curriculo.png" alt="Currículo de Cleyton Rodrigues Pedroza" loading="lazy">
             </div>
         </section>
 
-        <section class="section memorial">
+        <section class="section memorial" id="memorial">
             <div class="section__header">
+                <p class="eyebrow" data-reveal="sobe">03 — Memorial</p>
                 <h2 class="Meu_Memorial">Meu memorial</h2>
             </div>
             <div class="section__content memorial__content">
@@ -59,16 +105,21 @@
                     responsabilidades e fazer o que precisa ser feito sem reclamar, eu consiga me tornar um profissional
                     de sucesso no futuro. Acredito que disciplina e foco podem me ajudar a construir uma carreira sólida
                     e alcançar tudo o que planejo.</p>
-                <img class="Foto_boa" src="Foto_Minha/eu_melhor.JPEG" alt="Foto em destaque">
+                <img class="Foto_boa" src="Foto_Minha/Eu_de_oculos.JPEG" alt="Cleyton Rodrigues Pedroza" loading="lazy">
             </div>
         </section>
 
-        <section class="section split">
+        <section class="section split" id="objetivos">
             <div class="split__column">
+                <p class="eyebrow" data-reveal="sobe">04 — Metas</p>
                 <h2 class="Objetivos">Objetivos</h2>
-                <p class="Texto_Objetivos">Tenho como objetivo atingir várias metas ao longo da minha vida. A cada fase que passa, novos objetivos surgem, trazendo ainda mais coisas para buscar. Não costumo ter um único objetivo fixo o tempo todo; estou sempre criando novas metas conforme vou evoluindo e entendendo melhor o que quero para o meu futuro.</p>
+                <p class="Texto_Objetivos">Tenho como objetivo atingir várias metas ao longo da minha vida. A cada fase
+                    que passa, novos objetivos surgem, trazendo ainda mais coisas para buscar. Não costumo ter um único
+                    objetivo fixo o tempo todo; estou sempre criando novas metas conforme vou evoluindo e entendendo
+                    melhor o que quero para o meu futuro.</p>
             </div>
             <div class="split__column">
+                <p class="eyebrow" data-reveal="sobe">05 — Fora da escola</p>
                 <h2 class="Interesses">Interesses</h2>
                 <p class="Texto_Interesses">Gosto de jogar Clash Royale e de passar meu tempo vendo TikTok. Tenho
                     bastante disciplina para ir à academia, tanto que raramente falto. Também gosto de sair para festas;
@@ -77,37 +128,14 @@
         </section>
 
         <section class="section video">
-            <video class="Will" autoplay muted loop playsinline>
-                <source src="Video/Will&#32;Smitch.mp4" type="video/mp4">
-            </video>
+            <div class="video__moldura">
+                <video class="Will" autoplay muted loop playsinline>
+                    <source src="Video/Will&#32;Smitch.mp4" type="video/mp4">
+                </video>
+            </div>
         </section>
 
-        <footer class="site-footer">
-            <p>&copy; Cleyton Rodrigues Pedroza</p>
-        </footer>
     </main>
-
-    <!-- Script para animações de entrada (Scroll Reveal) -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll('.section');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        // Opcional: remover a observação se quiser que a animação ocorra apenas uma vez
-                        // observer.unobserve(entry.target); 
-                    }
-                });
-            }, {
-                threshold: 0.15 // Ativa a animação quando 15% da seção está visível
-            });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
 </body>
 
 </html>

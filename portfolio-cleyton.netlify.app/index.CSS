@@ -8,6 +8,10 @@
   font-family: "Cocogoose";
   src: url("Font/Cocogoose-Pro-Bold-trial.ttf") format("opentype");
   font-display: swap;
+  /* A versão trial troca os algarismos por uma marca d'água. Tirando
+     U+0030–U+0039 do alcance, o navegador vai buscar cada número na próxima
+     fonte da pilha (Manrope) e nenhum título quebra mais. */
+  unicode-range: U+0-2F, U+3A-10FFFF;
 }
 
 @font-face {
@@ -30,10 +34,10 @@
 
 :root {
   --content-max: 1220px;
-  --card-bg: rgba(15, 15, 15, 0.45);
-  --border: rgba(255, 255, 255, 0.15);
-  --shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-  --glass-blur: blur(16px);
+  --card-bg: rgba(8, 8, 13, 0.74);
+  --border: rgba(255, 255, 255, 0.18);
+  --shadow: 0 18px 46px rgba(0, 0, 0, 0.55);
+  --glass-blur: blur(18px);
 }
 
 * {
@@ -47,7 +51,7 @@ html {
 }
 
 body {
-  font-family: "Cocogoose", sans-serif;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
   color: #fff;
   min-height: 100vh;
   position: relative;
@@ -64,10 +68,17 @@ body {
   z-index: -2;
 }
 
+/* O vídeo de fundo é claro: sem um véu forte, texto branco fica ilegível. */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background:
+    linear-gradient(180deg,
+      rgba(4, 4, 9, 0.86) 0%,
+      rgba(4, 4, 9, 0.66) 30%,
+      rgba(4, 4, 9, 0.68) 70%,
+      rgba(4, 4, 9, 0.88) 100%),
+    rgba(4, 4, 9, 0.24);
   z-index: -1;
 }
 
@@ -86,7 +97,7 @@ body {
   position: sticky;
   top: 16px;
   z-index: 100;
-  background: rgba(15, 15, 15, 0.5);
+  background: rgba(8, 8, 13, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 12px 24px;
@@ -135,7 +146,7 @@ body {
 }
 
 .Menu_portifolios {
-  font-family: "Cocogoose", sans-serif;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
   font-size: 28px;
 }
 
@@ -172,7 +183,7 @@ body {
 
 .section__title {
   font-size: 40px;
-  font-family: "Cocogoose", sans-serif;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
   text-shadow: #000 1px 1px 18px;
 }
 
@@ -210,7 +221,7 @@ body {
 
 .Quem_sou_eu {
   font-size: 42px;
-  font-family: "Cocogoose", sans-serif;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
   margin-bottom: 18px;
   text-shadow: #000 1px 1px 25px;
 }
@@ -263,7 +274,7 @@ body {
 }
 
 .section__header .Meu_Memorial {
-  font-family: "Cocogoose", sans-serif;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
 }
 
 .Texto_Memorial {
@@ -273,8 +284,12 @@ body {
 
 .Foto_boa {
   width: 100%;
-  max-width: 480px;
-  border-radius: 14px;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 20%;
+  justify-self: center;
+  border-radius: 16px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   transform-origin: center;
@@ -348,7 +363,7 @@ body {
 
 .card__title {
   font-size: 22px;
-  font-family: "Cocogoose", sans-serif;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
 }
 
 .card__text {
@@ -374,7 +389,7 @@ body {
   border: 1px solid var(--border);
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
   font-size: 16px;
-  font-family: "Cocogoose", sans-serif;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
 }
 
 .btn:hover {
@@ -429,17 +444,6 @@ body {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
   object-fit: cover;
   display: block;
-}
-
-.site-footer {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 14px;
-  padding-top: 8px;
-}
-
-.site-footer p {
-  margin: 0;
 }
 
 body.no-scroll {
@@ -531,4 +535,378 @@ body.no-scroll {
   border-radius: 8px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
   display: block;
+}
+
+/* ==========================================================================
+   Refino editorial da página inicial
+   ========================================================================== */
+
+.page {
+  gap: clamp(56px, 8vw, 108px);
+}
+
+/* --- Rótulo de seção ---------------------------------------------------- */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.56);
+  font: 400 12px / 1.4 var(--fonte-num, "Segoe UI", Arial, sans-serif);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--acento, #7dd3fc), transparent);
+}
+
+/* --- Títulos de seção --------------------------------------------------- */
+
+.section__header {
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.section__header h1,
+.section__header h2 {
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+  text-shadow: 0 10px 34px rgba(0, 0, 0, 0.55);
+}
+
+/* --- Herói --------------------------------------------------------------- */
+
+.hero {
+  display: grid;
+}
+
+.hero__content {
+  position: relative;
+  overflow: hidden;
+  gap: clamp(28px, 4vw, 52px);
+  padding: clamp(26px, 4vw, 46px);
+  border-radius: 26px;
+}
+
+.hero__content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 10% 0%, rgba(var(--acento-rgb, 125, 211, 252), 0.15), transparent 55%),
+    radial-gradient(90% 80% at 100% 100%, rgba(var(--acento-2-rgb, 192, 132, 252), 0.13), transparent 58%);
+}
+
+.hero__text {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+}
+
+.hero__titulo {
+  display: grid;
+  margin: 0;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
+  font-size: clamp(36px, 6.2vw, 70px);
+  line-height: 1.02;
+  letter-spacing: -1px;
+  text-shadow: 0 12px 38px rgba(0, 0, 0, 0.6);
+}
+
+.hero__titulo span {
+  background: linear-gradient(100deg, var(--acento, #7dd3fc), var(--acento-2, #c084fc));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.hero__papel {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font: 400 clamp(15px, 2vw, 19px) / 1.5 var(--fonte-num, "Segoe UI", Arial, sans-serif);
+}
+
+.hero__rotador {
+  color: var(--acento, #7dd3fc);
+  font-weight: 600;
+}
+
+/* Cursor como pseudo-elemento: assim ele nunca quebra para a linha
+   seguinte sozinho quando o texto é reescrito. */
+.hero__rotador::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 3px;
+  vertical-align: -0.15em;
+  background: var(--acento, #7dd3fc);
+  animation: piscaCursor 1.05s steps(1) infinite;
+}
+
+@keyframes piscaCursor {
+  50% { opacity: 0; }
+}
+
+.hero__lead {
+  max-width: 56ch;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+  line-height: 1.72;
+}
+
+/* --- Botões -------------------------------------------------------------- */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 13px 24px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.botao--primario {
+  background: linear-gradient(120deg, var(--acento, #7dd3fc), var(--acento-2, #c084fc));
+  color: #07070d;
+  box-shadow: 0 14px 34px rgba(var(--acento-rgb, 125, 211, 252), 0.26);
+}
+
+.botao--primario:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(var(--acento-rgb, 125, 211, 252), 0.4);
+}
+
+.botao--fantasma {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.botao--fantasma:hover {
+  transform: translateY(-3px);
+  border-color: rgba(var(--acento-rgb, 125, 211, 252), 0.5);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.botao__seta {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.botao:hover .botao__seta {
+  transform: translateX(4px);
+}
+
+/* --- Retrato ------------------------------------------------------------- */
+
+.hero__photo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 18px;
+}
+
+.retrato {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.retrato .Foto_oculos {
+  display: block;
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 22%;
+  border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.retrato__aro {
+  position: absolute;
+  inset: -12px;
+  border: 1px solid rgba(var(--acento-rgb, 125, 211, 252), 0.34);
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.retrato__legenda {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  margin: 0;
+  text-align: center;
+}
+
+.retrato__legenda > span:first-child {
+  font-family: "Ghrathe", sans-serif;
+  font-size: 26px;
+  text-shadow: #000 1px 1px 20px;
+}
+
+.retrato__data {
+  color: rgba(255, 255, 255, 0.5);
+  font: 400 12px / 1 var(--fonte-num, "Segoe UI", Arial, sans-serif);
+  letter-spacing: 0.2em;
+}
+
+/* --- Indicador de rolagem ------------------------------------------------ */
+
+.rolar {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin: 26px auto 0;
+  color: rgba(255, 255, 255, 0.58);
+  text-decoration: none;
+  font: 400 11px / 1 var(--fonte-num, "Segoe UI", Arial, sans-serif);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.rolar:hover {
+  color: #fff;
+}
+
+.rolar__trilho {
+  position: relative;
+  width: 22px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+}
+
+.rolar__ponto {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: var(--acento, #7dd3fc);
+  animation: rolarPonto 1.9s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes rolarPonto {
+  0%   { opacity: 0; transform: translateY(0); }
+  25%  { opacity: 1; }
+  75%  { opacity: 1; transform: translateY(16px); }
+  100% { opacity: 0; transform: translateY(16px); }
+}
+
+/* --- Objetivos e interesses ---------------------------------------------- */
+
+.split__column .Objetivos,
+.split__column .Interesses {
+  margin-top: 4px;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
+  font-size: clamp(28px, 3.6vw, 40px);
+  letter-spacing: -0.4px;
+}
+
+.split__column .eyebrow {
+  margin-bottom: 2px;
+}
+
+/* --- Vídeo --------------------------------------------------------------- */
+
+/* O clipe é um meme solto logo abaixo de Objetivos e Interesses, sem título
+   próprio: encosta no bloco de cima anulando parte do gap do .page. */
+.video {
+  margin-top: calc(24px - clamp(56px, 8vw, 108px));
+}
+
+/* A moldura acompanha a proporção nativa do clipe (1552x1080) para não
+   recortar a cena. */
+.video__moldura {
+  position: relative;
+  width: min(100%, 760px);
+  margin: 0 auto;
+  aspect-ratio: 1552 / 1080;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  background: #06060b;
+}
+
+/* O clipe tem fundo claro: uma vinheta o costura ao restante da página. */
+.video__moldura::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(4, 4, 9, 0.45), transparent 22%, transparent 74%, rgba(4, 4, 9, 0.55)),
+    radial-gradient(120% 100% at 50% 50%, transparent 45%, rgba(4, 4, 9, 0.4));
+}
+
+.video .Will {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 860px) {
+  .hero__content {
+    text-align: left;
+  }
+
+  .hero__text {
+    justify-items: start;
+  }
+
+  /* O retrato vem primeiro no celular: limitá-lo mantém nome e função
+     visíveis já na primeira tela. */
+  .retrato {
+    max-width: 240px;
+  }
+
+  .retrato__legenda > span:first-child {
+    font-size: 22px;
+  }
+
+  .hero__photo {
+    gap: 12px;
+  }
+
+  .rolar {
+    display: none;
+  }
 }

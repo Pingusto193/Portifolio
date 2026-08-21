@@ -1,371 +1,371 @@
-/* Estilos específicos da página de matérias */
+/* ============================================================================
+   Materias.CSS — cabeçalho da área e a roda 3D de matérias.
+   Cartões minimalistas: só símbolo, nome e acento da área.
+   ============================================================================ */
 
 .section_materias {
-  margin-top: 36px;
-  width: 100%;
   display: grid;
-  gap: 28px;
-  animation: fadeUp 0.8s ease-out forwards;
+  gap: clamp(24px, 4vw, 44px);
+  width: 100%;
+  min-width: 0;
+  margin-top: 28px;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* --------------------------------------------------------------- cabeçalho */
 
 .materias__hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
-  gap: 24px;
-  align-items: end;
-  padding: 32px;
+  gap: 16px;
+  padding: clamp(26px, 4vw, 46px);
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.18));
+  border-radius: 26px;
+  background: var(--card-bg, rgba(8, 8, 13, 0.74));
+  box-shadow: var(--shadow, 0 18px 46px rgba(0, 0, 0, 0.55));
+  backdrop-filter: var(--glass-blur, blur(18px));
+  -webkit-backdrop-filter: var(--glass-blur, blur(18px));
+}
+
+.materias__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background:
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 36%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-  backdrop-filter: var(--glass-blur, blur(16px));
-  -webkit-backdrop-filter: var(--glass-blur, blur(16px));
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
-}
-
-.materias__hero-copy {
-  display: grid;
-  gap: 12px;
-}
-
-.materias__eyebrow {
-  margin: 0;
-  font-size: 13px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
+    radial-gradient(120% 90% at 8% 0%, rgba(var(--acento-rgb), 0.16), transparent 55%),
+    radial-gradient(90% 80% at 100% 100%, rgba(var(--acento-2-rgb), 0.14), transparent 58%);
 }
 
 .materias__heading {
   margin: 0;
-  font-size: clamp(38px, 5vw, 58px);
-  font-family: "Paper Noise", sans-serif;
-  letter-spacing: 1px;
-  text-shadow: #000 2px 2px 18px;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
+  font-size: clamp(36px, 5.4vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -1px;
+  text-shadow: 0 12px 38px rgba(0, 0, 0, 0.6);
 }
 
-.materias__lead {
-  margin: 0;
-  max-width: 720px;
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.88);
+.materias__heading span {
+  background: linear-gradient(100deg, var(--acento), var(--acento-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
 }
 
-.materias__hero-aside {
+/* ------------------------------------------------------------------- roda */
+
+.roda-bloco {
   display: grid;
-  justify-items: end;
-  gap: 12px;
-}
-
-.materias__hint,
-.materias__count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 12px 18px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
-}
-
-.materias__hint {
-  font-size: 14px;
-}
-
-.materias__count {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.86);
-}
-
-.materias__carousel {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 18px;
-  align-items: center;
+  min-width: 0;
 }
 
-.materias__control {
-  width: 52px;
-  height: 52px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 50%;
-  background: rgba(15, 15, 15, 0.52);
-  color: #fff;
-  font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-}
-
-.materias__control:hover:not(:disabled) {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.14);
-}
-
-.materias__control:disabled {
-  opacity: 0.35;
-  cursor: default;
-}
-
-.materias__viewport {
+.roda-palco {
   position: relative;
+  height: clamp(400px, 56vh, 470px);
+  perspective: 1250px;
+  perspective-origin: 50% 46%;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.materias__viewport::before,
-.materias__viewport::after {
+.roda-palco.girando {
+  cursor: grabbing;
+}
+
+.roda {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Sombra de contato no chão da roda. */
+.roda-palco::after {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 16px;
-  width: 64px;
-  z-index: 2;
+  left: 50%;
+  bottom: 8px;
+  width: min(70%, 520px);
+  height: 34px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.55), transparent 70%);
   pointer-events: none;
 }
 
-.materias__viewport::before {
-  left: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.55), transparent);
-}
+/* ------------------------------------------------------------------ cartão */
 
-.materias__viewport::after {
-  right: 0;
-  background: linear-gradient(270deg, rgba(0, 0, 0, 0.55), transparent);
-}
-
-.materias__grid {
-  display: flex;
-  overflow-x: auto;
-  gap: 28px;
-  padding: 18px 10px 28px;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  cursor: grab;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
-}
-
-.materias__grid::-webkit-scrollbar {
-  height: 10px;
-}
-
-.materias__grid::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.24);
-  border-radius: 999px;
-}
-
-.materias__grid::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.38);
-  border-radius: 999px;
-}
-
-.materias__grid::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.58);
-}
-
-.materia__card {
-  --materia-accent: rgba(255, 255, 255, 0.3);
-  --materia-soft: rgba(255, 255, 255, 0.08);
-  flex: 0 0 300px;
-  scroll-snap-align: center;
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)),
-    var(--card-bg, rgba(15, 15, 15, 0.45));
-  backdrop-filter: var(--glass-blur, blur(16px));
-  -webkit-backdrop-filter: var(--glass-blur, blur(16px));
-  border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.48);
-  text-decoration: none;
-  color: #fff;
-  display: grid;
-  gap: 18px;
-  padding: 18px;
-  transition: transform 0.32s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.materia__card::before {
-  content: "";
+.carta {
+  --carta-acento: var(--acento);
+  --carta-rgb: var(--acento-rgb);
   position: absolute;
-  inset: 0 auto 0 0;
-  width: 6px;
-  background: linear-gradient(180deg, var(--materia-accent), transparent 78%);
-}
-
-.materia__card:hover {
-  transform: translateY(-10px);
-  border-color: var(--materia-accent);
-  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.58);
-}
-
-.materia__img-wrapper {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: 16px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
-}
-
-.materia__img-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 25%, rgba(0, 0, 0, 0.4));
-}
-
-.materia__card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  transition: transform 0.45s ease;
-}
-
-.materia__card:hover img {
-  transform: scale(1.05);
-}
-
-.materia__body {
+  top: 50%;
+  left: 50%;
+  width: var(--carta-w, 268px);
+  height: var(--carta-h, 356px);
+  margin-top: calc(var(--carta-h, 356px) * -0.5);
+  margin-left: calc(var(--carta-w, 268px) * -0.5);
+  transform: rotateY(calc(var(--i) * var(--passo, 60deg))) translateZ(var(--raio, 300px));
   display: grid;
+  grid-template-rows: auto 1fr auto;
   gap: 10px;
+  padding: 24px 24px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 24px;
+  background:
+    linear-gradient(160deg, rgba(var(--carta-rgb), 0.14), transparent 46%),
+    rgba(9, 9, 15, 0.88);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.55);
+  color: #fff;
+  text-decoration: none;
+  backface-visibility: hidden;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
 }
 
-.materia__tag {
+.carta__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.carta__indice {
+  color: rgba(255, 255, 255, 0.34);
+  font: 800 14px / 1 var(--fonte-num);
+  letter-spacing: 0.1em;
+  transition: color 0.35s ease;
+}
+
+.carta__tag {
+  white-space: nowrap;
+  padding: 6px 11px;
+  border: 1px solid rgba(var(--carta-rgb), 0.32);
+  border-radius: 999px;
+  background: rgba(var(--carta-rgb), 0.12);
+  color: rgba(255, 255, 255, 0.86);
+  font: 600 10px / 1 var(--fonte-num);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Símbolo no lugar da foto: o traço herda a cor da área. */
+.carta__simbolo {
+  display: grid;
+  place-items: center;
+  align-self: center;
+  width: 108px;
+  height: 108px;
+  justify-self: center;
+  border: 1px solid rgba(var(--carta-rgb), 0.28);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--carta-rgb), 0.16), transparent 72%);
+  color: var(--carta-acento);
+  transition: transform 0.5s var(--mola), box-shadow 0.5s ease, border-color 0.4s ease;
+}
+
+.carta__simbolo svg {
+  width: 52px;
+  height: 52px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.carta__rodape {
+  display: grid;
+  gap: 7px;
+}
+
+.carta__titulo {
+  margin: 0;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
+  font-size: 27px;
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+}
+
+.carta__meta {
+  margin: 0;
+  color: var(--carta-acento);
+  font: 600 11px / 1.3 var(--fonte-num);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.carta__cta {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: fit-content;
-  padding: 7px 12px;
-  border-radius: 999px;
-  background: var(--materia-soft);
+  gap: 8px;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.55);
+  font: 600 12px / 1 var(--fonte-num);
+  letter-spacing: 0.05em;
+  transition: color 0.35s ease;
+}
+
+.carta__cta i {
+  font-style: normal;
+  transition: transform 0.35s var(--mola);
+}
+
+/* O cartão de frente é o único destacado. */
+.carta--frente {
+  border-color: rgba(var(--carta-rgb), 0.5);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.62),
+    0 0 40px rgba(var(--carta-rgb), 0.16);
+}
+
+.carta--frente .carta__indice {
+  color: var(--carta-acento);
+}
+
+.carta--frente .carta__simbolo {
+  border-color: rgba(var(--carta-rgb), 0.55);
+  box-shadow: 0 0 34px rgba(var(--carta-rgb), 0.22);
+}
+
+.carta--frente .carta__cta {
+  color: var(--carta-acento);
+}
+
+.carta--frente:hover .carta__simbolo {
+  transform: scale(1.07);
+}
+
+.carta--frente:hover .carta__cta i {
+  transform: translateX(5px);
+}
+
+/* ----------------------------------------------------------------- dica */
+
+.roda-dica {
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  gap: 11px;
+  margin: 0;
+  padding: 10px 20px;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 12px;
+  border-radius: 999px;
+  background: rgba(10, 10, 16, 0.6);
+  color: rgba(255, 255, 255, 0.55);
+  font: 500 11px / 1 var(--fonte-num);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.materia__title {
-  font-size: 32px;
-  font-family: "Paper Noise", sans-serif;
-  text-shadow: #000 2px 2px 15px;
-  letter-spacing: 1px;
+.roda-dica__seta {
+  color: var(--acento);
+  font-size: 15px;
+  line-height: 1;
+  animation: dicaBalanco 2.2s var(--mola) infinite;
 }
 
-.materia__meta {
+@keyframes dicaBalanco {
+  0%, 100% { transform: translateX(-3px); }
+  50%      { transform: translateX(3px); }
+}
+
+/* ---------------------------------------------------- versão sem 3D */
+
+/* Sem JavaScript ou com movimento reduzido a roda vira uma grade simples. */
+.roda-bloco.roda--estatica .roda-palco,
+html:not(.exp-js) .roda-palco {
+  height: auto;
+  perspective: none;
+  cursor: default;
+}
+
+.roda-bloco.roda--estatica .roda-palco::after,
+html:not(.exp-js) .roda-palco::after {
+  display: none;
+}
+
+.roda-bloco.roda--estatica .roda,
+html:not(.exp-js) .roda {
+  position: static;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  transform: none !important;
+  transform-style: flat;
+}
+
+.roda-bloco.roda--estatica .carta,
+html:not(.exp-js) .carta {
+  position: static;
+  width: auto;
+  height: auto;
+  min-height: 300px;
   margin: 0;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--materia-accent);
+  transform: none !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
-.materia__text {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.84);
+.roda-bloco.roda--estatica .roda-dica,
+html:not(.exp-js) .roda-dica {
+  display: none;
 }
 
-.materia__card--portugues {
-  --materia-accent: #f97316;
-  --materia-soft: rgba(249, 115, 22, 0.14);
-}
+/* ---------------------------------------------------------- cores por área */
 
-.materia__card--matematica {
-  --materia-accent: #38bdf8;
-  --materia-soft: rgba(56, 189, 248, 0.14);
-}
+.carta--linguagens { --carta-acento: #fb923c; --carta-rgb: 251, 146, 60; }
+.carta--matematica { --carta-acento: #38bdf8; --carta-rgb: 56, 189, 248; }
+.carta--natureza   { --carta-acento: #34d399; --carta-rgb: 52, 211, 153; }
+.carta--humanas    { --carta-acento: #f87171; --carta-rgb: 248, 113, 113; }
+.carta--tecnico    { --carta-acento: #a78bfa; --carta-rgb: 167, 139, 250; }
+.carta--ppe        { --carta-acento: #facc15; --carta-rgb: 250, 204, 21; }
 
-.materia__card--natureza {
-  --materia-accent: #22c55e;
-  --materia-soft: rgba(34, 197, 94, 0.14);
-}
+/* --------------------------------------------------------------- responsivo */
 
-.materia__card--humanas {
-  --materia-accent: #ef4444;
-  --materia-soft: rgba(239, 68, 68, 0.14);
-}
-
-.materia__card--tecnico {
-  --materia-accent: #94a3b8;
-  --materia-soft: rgba(148, 163, 184, 0.14);
-}
-
-.materia__card--ppe {
-  --materia-accent: #facc15;
-  --materia-soft: rgba(250, 204, 21, 0.14);
-}
-
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 720px) {
   .section_materias {
-    margin-top: 20px;
+    margin-top: 14px;
   }
 
-  .materias__hero {
-    grid-template-columns: 1fr;
-    padding: 24px;
+  .roda-palco {
+    height: clamp(360px, 62vh, 420px);
+    perspective: 900px;
   }
 
-  .materias__hero-aside {
-    justify-items: start;
+  .carta {
+    padding: 20px 20px 18px;
   }
 
-  .materias__carousel {
-    grid-template-columns: 1fr;
+  .carta__simbolo {
+    width: 92px;
+    height: 92px;
   }
 
-  .materias__control {
-    display: none;
+  .carta__simbolo svg {
+    width: 44px;
+    height: 44px;
   }
 
-  .materias__viewport::before,
-  .materias__viewport::after {
-    width: 34px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .materias__heading {
-    font-size: 42px;
+  .carta__titulo {
+    font-size: 24px;
   }
 
-  .materias__lead {
-    font-size: 16px;
-  }
-
-  .materias__grid {
-    gap: 20px;
-    padding: 16px 4px 24px;
-  }
-
-  .materia__card {
-    flex-basis: 250px;
-    padding: 16px;
-  }
-
-  .materia__title {
-    font-size: 28px;
-  }
-
-  .materia__text {
-    font-size: 15px;
+  .carta__tag {
+    padding: 5px 9px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
   }
 }

@@ -7,6 +7,8 @@
     <title>Portfólios</title>
     <link rel="stylesheet" href="index.CSS">
     <link rel="stylesheet" href="Portifolio.CSS">
+    <link rel="stylesheet" href="Experiencia.CSS">
+    <script src="Experiencia.js"></script>
 </head>
 <body>
     <video class="bg-video" autoplay muted loop playsinline>
@@ -16,28 +18,64 @@
 
     <main class="page">
         <header class="top-bar">
-            <nav class="Nav_Menu">
+            <span class="marca">
+                <span class="marca__texto">Cleyton Pedroza<span>Portfólio</span></span>
+            </span>
+            <nav class="Nav_Menu" aria-label="Navegação principal">
                 <ul>
-                    <li class="Menu_Item"><a class="Menu_portifolios" href="Portifolio.HTML" aria-current="page">Portfólios</a></li>
+                    <li class="Menu_Item"><a class="Menu_Link" href="index.html">Início</a></li>
                     <li class="Menu_Item"><a class="Menu_Link_Materias" href="Materias.HTML">Matérias</a></li>
-                    <li class="Menu_Item"><a class="Menu_Link" href="index.html">Menu</a></li>
+                    <li class="Menu_Item"><a class="Menu_portifolios" href="Portifolio.HTML" aria-current="page">Portfólios</a></li>
                 </ul>
             </nav>
         </header>
 
         <section class="section_portfolio">
+            <div class="portfolio__hero">
+                <p class="eyebrow" data-entrada="0">Arquivo</p>
+                <h1 class="portfolio__heading" data-entrada="1">Portfólios anteriores</h1>
+                <p class="portfolio__lead" data-entrada="2">
+                    Antes desta versão, meu portfólio passou por outras duas plataformas. Deixo os
+                    dois registros acessíveis para mostrar como o trabalho — e a forma de
+                    apresentá-lo — evoluiu ao longo do curso.
+                </p>
+            </div>
+
             <div class="portfolio__grid">
                 <article class="portfolio__item">
-                    <a class="btn portfolio__btn" href="https://www.canva.com/design/DAF887Mo4WE/9TqCkIGtFOXoJvmcDaPHSQ/edit?utm_content=DAF887Mo4WE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Primeiro</a>
-                    <img class="portfolio__thumb" src="Fotos_Portifolio/Screenshot&#32;2025-12-12&#32;190341.png" alt="Portfólio 2024">
+                    <div class="portfolio__midia">
+                        <img class="portfolio__thumb" src="Fotos_Portifolio/Screenshot&#32;2025-12-12&#32;190341.png" alt="Página inicial do primeiro portfólio, feito no Canva" loading="lazy">
+                    </div>
+                    <div class="portfolio__corpo">
+                        <span class="portfolio__selo">Primeira versão · Canva</span>
+                        <h2 class="portfolio__titulo">Primeiro portfólio</h2>
+                        <p class="portfolio__texto">Montado como apresentação no Canva, reunindo as
+                            primeiras atividades e a apresentação pessoal.</p>
+                        <a class="botao botao--fantasma" href="https://www.canva.com/design/DAF887Mo4WE/9TqCkIGtFOXoJvmcDaPHSQ/edit?utm_content=DAF887Mo4WE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">
+                            Abrir no Canva
+                            <span class="botao__seta" aria-hidden="true">&#8599;</span>
+                        </a>
+                    </div>
                 </article>
 
                 <article class="portfolio__item">
-                    <a class="btn portfolio__btn" href="https://sites.google.com/estudante.sesisenai.org.br/portifolio-do-cleyton/menu">Segundo</a>
-                    <img class="portfolio__thumb" src="Fotos_Portifolio/Screenshot&#32;2025-12-12&#32;190359.png" alt="Portfólio 2025">
+                    <div class="portfolio__midia">
+                        <img class="portfolio__thumb" src="Fotos_Portifolio/Screenshot&#32;2025-12-12&#32;190359.png" alt="Página inicial do segundo portfólio, feito no Google Sites" loading="lazy">
+                    </div>
+                    <div class="portfolio__corpo">
+                        <span class="portfolio__selo">Segunda versão · Google Sites</span>
+                        <h2 class="portfolio__titulo">Segundo portfólio</h2>
+                        <p class="portfolio__texto">Primeira versão em formato de site, já organizada
+                            por menu e separada por áreas de conhecimento.</p>
+                        <a class="botao botao--fantasma" href="https://sites.google.com/estudante.sesisenai.org.br/portifolio-do-cleyton/menu" target="_blank" rel="noopener noreferrer">
+                            Abrir no Google Sites
+                            <span class="botao__seta" aria-hidden="true">&#8599;</span>
+                        </a>
+                    </div>
                 </article>
             </div>
         </section>
+
     </main>
 </body>
 </html>

@@ -1,0 +1,569 @@
+/* ============================================================================
+   Experiencia.CSS — camada compartilhada de entrada, animação e transição.
+   Carregada por último em todas as páginas para poder refinar o que já existe.
+   ============================================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --acento: #7dd3fc;
+  --acento-rgb: 125, 211, 252;
+  --acento-2: #c084fc;
+  --acento-2-rgb: 192, 132, 252;
+  --tinta-fraca: rgba(255, 255, 255, 0.66);
+  --mola: cubic-bezier(0.22, 1, 0.36, 1);
+  --saida: cubic-bezier(0.65, 0, 0.35, 1);
+  --z-cortina: 9990;
+  --z-intro: 9999;
+  /* A versão trial da Cocogoose troca algarismos por uma marca d'água e é
+     pesada em textos longos. Ela fica reservada aos títulos de display;
+     corpo de texto, interface e qualquer coisa com número usam a Manrope. */
+  --fonte-ui: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --fonte-num: var(--fonte-ui);
+}
+
+body {
+  font-family: var(--fonte-ui);
+}
+
+/* --------------------------------------------------------------------------
+   Fallback sem JavaScript: nada pode ficar invisível se o script não rodar.
+   -------------------------------------------------------------------------- */
+
+html:not(.exp-js) .section {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Cortinas de transição entre páginas
+   -------------------------------------------------------------------------- */
+
+html::before,
+html::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-cortina);
+  pointer-events: none;
+  background: linear-gradient(165deg, #0d0d18, #05050a 62%);
+  transform: scaleY(0);
+}
+
+html::before {
+  transform-origin: top;
+  transition: transform 0.62s var(--mola);
+}
+
+html::after {
+  transform-origin: bottom;
+  transition: transform 0.42s var(--saida);
+}
+
+html.exp-entrando::before {
+  transform: scaleY(1);
+}
+
+html.exp-saindo::after {
+  transform: scaleY(1);
+}
+
+html.exp-travado,
+html.exp-travado body {
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Tela de entrada
+   -------------------------------------------------------------------------- */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-intro);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.intro__cortina {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.4%;
+  background: #06060c;
+  transition: transform 0.9s var(--mola);
+}
+
+.intro__cortina--topo {
+  top: 0;
+  transform-origin: top center;
+  background-image: radial-gradient(120% 160% at 50% 100%, rgba(var(--acento-rgb), 0.16), transparent 58%);
+}
+
+.intro__cortina--base {
+  bottom: 0;
+  transform-origin: bottom center;
+  background-image: radial-gradient(120% 160% at 50% 0%, rgba(var(--acento-2-rgb), 0.14), transparent 58%);
+}
+
+.intro__conteudo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+  transition: opacity 0.42s ease, transform 0.42s var(--saida);
+}
+
+.intro__risco {
+  width: min(300px, 62vw);
+  height: 2px;
+  margin-bottom: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--acento), var(--acento-2), transparent);
+  transform: scaleX(0);
+  animation: introRisco 1.15s var(--mola) 0.15s forwards;
+}
+
+.intro__nome {
+  margin: 0;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
+  font-size: clamp(20px, 4.4vw, 30px);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.intro__nome span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: introLetra 0.62s var(--mola) forwards;
+  animation-delay: calc(0.55s + var(--i) * 0.028s);
+}
+
+.intro__cargo {
+  margin: 0;
+  font-family: var(--fonte-num);
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+  opacity: 0;
+  animation: introSobe 0.7s var(--mola) 1.05s forwards;
+}
+
+.intro__barra {
+  position: relative;
+  width: min(240px, 62vw);
+  height: 2px;
+  margin-top: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  opacity: 0;
+  animation: introSobe 0.5s ease 1.15s forwards;
+}
+
+.intro__barra-preenchimento {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--acento), var(--acento-2));
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: introCarrega 1.5s var(--mola) 1.15s forwards;
+}
+
+.intro--saindo .intro__conteudo {
+  opacity: 0;
+  transform: translateY(-14px) scale(0.97);
+}
+
+.intro--saindo .intro__cortina {
+  transform: scaleY(0);
+}
+
+@keyframes introRisco {
+  to { transform: scaleX(1); }
+}
+
+@keyframes introLetra {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes introSobe {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes introCarrega {
+  to { transform: scaleX(1); }
+}
+
+/* --------------------------------------------------------------------------
+   Barra de progresso da rolagem
+   -------------------------------------------------------------------------- */
+
+.progresso-rolagem {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9980;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.progresso-rolagem span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--acento), var(--acento-2));
+  box-shadow: 0 0 14px rgba(var(--acento-rgb), 0.55);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* --------------------------------------------------------------------------
+   Brilho que segue o cursor (só em telas com mouse)
+   -------------------------------------------------------------------------- */
+
+.foco-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 520px;
+  margin: -260px 0 0 -260px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--acento-rgb), 0.13), transparent 62%);
+  transition: opacity 0.5s ease;
+  will-change: transform;
+}
+
+.foco-cursor.ativo {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Revelação ao rolar
+   -------------------------------------------------------------------------- */
+
+[data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 0.75s var(--mola) var(--atraso, 0s),
+    transform 0.75s var(--mola) var(--atraso, 0s),
+    filter 0.75s var(--mola) var(--atraso, 0s);
+  will-change: opacity, transform;
+}
+
+[data-reveal="sobe"]     { transform: translateY(34px); }
+[data-reveal="desce"]    { transform: translateY(-26px); }
+[data-reveal="esquerda"] { transform: translateX(-38px); }
+[data-reveal="direita"]  { transform: translateX(38px); }
+[data-reveal="zoom"]     { transform: scale(0.94); filter: blur(4px); }
+
+[data-reveal].revelado {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* --------------------------------------------------------------------------
+   Entrada encadeada da primeira dobra
+   -------------------------------------------------------------------------- */
+
+[data-entrada] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.85s var(--mola) var(--atraso, 0s),
+    transform 0.85s var(--mola) var(--atraso, 0s);
+}
+
+[data-entrada].entrou {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Barra superior: marca, menu e estado fixado
+   -------------------------------------------------------------------------- */
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 26px;
+  padding: 12px 20px;
+  border-radius: 16px;
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    padding 0.35s ease;
+}
+
+.top-bar.fixada {
+  background: rgba(8, 8, 12, 0.82);
+  border-color: rgba(var(--acento-rgb), 0.26);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.52);
+  padding-block: 8px;
+}
+
+/* A marca é só identificação: o menu já tem o botão "Início". */
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+}
+
+.marca__texto {
+  display: grid;
+  line-height: 1.15;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+}
+
+.marca__texto span {
+  font-family: var(--fonte-num);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tinta-fraca);
+}
+
+.Nav_Menu ul {
+  gap: 6px;
+}
+
+.Nav_Menu a {
+  position: relative;
+  padding: 9px 14px;
+  border-radius: 10px;
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Neutraliza os tamanhos decorativos herdados para manter o menu uniforme. */
+.Menu_portifolios,
+.Menu_Link,
+.Menu_Link_Materias {
+  font-family: "Cocogoose", "Manrope", "Segoe UI", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+}
+
+.Nav_Menu a::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--acento), var(--acento-2));
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.35s var(--mola);
+}
+
+.Nav_Menu a:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.09);
+  color: #fff;
+  box-shadow: none;
+}
+
+.Nav_Menu a:hover::after,
+.Nav_Menu a[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.Nav_Menu a[aria-current="page"] {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-bottom: 0;
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Brilho de ponteiro nos cartões
+   -------------------------------------------------------------------------- */
+
+/* z-index negativo dentro do contexto isolado do cartão: o brilho fica acima
+   do fundo, porém atrás do texto. */
+.brilho-cartao {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.brilho-cartao::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    260px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(var(--acento-rgb), 0.16),
+    transparent 62%
+  );
+}
+
+.tem-brilho {
+  position: relative;
+  isolation: isolate;
+}
+
+.tem-brilho:hover > .brilho-cartao {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Botão voltar ao topo
+   -------------------------------------------------------------------------- */
+
+.ao-topo {
+  position: fixed;
+  right: clamp(16px, 3vw, 32px);
+  bottom: clamp(16px, 3vw, 32px);
+  z-index: 9970;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  background: rgba(10, 10, 16, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.46);
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s var(--mola), background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.ao-topo.visivel {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.ao-topo:hover {
+  border-color: rgba(var(--acento-rgb), 0.55);
+  background: rgba(var(--acento-rgb), 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   Foco visível consistente
+   -------------------------------------------------------------------------- */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(var(--acento-rgb), 0.85);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Respeito a quem prefere menos movimento
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html::before,
+  html::after {
+    display: none;
+  }
+
+  .intro,
+  .foco-cursor {
+    display: none !important;
+  }
+
+  [data-reveal],
+  [data-entrada],
+  [data-reveal].revelado,
+  [data-entrada].entrou {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Ajustes de tela pequena
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 720px) {
+  /* Sem o monograma, a marca vira uma linha própria acima do menu. */
+  .top-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .marca {
+    justify-content: center;
+  }
+
+  .marca__texto {
+    justify-items: center;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .Nav_Menu ul {
+    gap: 4px;
+  }
+
+  .Nav_Menu a,
+  .Menu_portifolios,
+  .Menu_Link,
+  .Menu_Link_Materias {
+    font-size: 14px;
+    padding: 8px 11px;
+  }
+
+  .ao-topo {
+    width: 44px;
+    height: 44px;
+  }
+}

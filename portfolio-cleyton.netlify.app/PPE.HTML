@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +6,11 @@
     <meta name="description" content="Projeto e Pesquisa Escolar (PPE) — portfólio de Cleyton Rodrigues Pedroza.">
     <title>PPE</title>
     <link rel="stylesheet" href="index.CSS">
-    <link rel="stylesheet" href="Tecnico.CSS">
+    <link rel="stylesheet" href="Atividades.CSS">
+    <link rel="stylesheet" href="Experiencia.CSS">
+    <script src="Experiencia.js"></script>
 </head>
-<body class="page-tecnico">
+<body class="page-ppe" data-materia="ppe">
     <video class="bg-video" autoplay muted loop playsinline>
         <source src="Video/Tela_de_Fundo.mp4" type="video/mp4">
     </video>
@@ -16,18 +18,55 @@
 
     <main class="page">
         <header class="top-bar">
-            <nav class="Nav_Menu">
+            <span class="marca">
+                <span class="marca__texto">Cleyton Pedroza<span>Portfólio</span></span>
+            </span>
+            <nav class="Nav_Menu" aria-label="Navegação principal">
                 <ul>
-                    <li class="Menu_Item"><a class="Menu_portifolios" href="Portifolio.HTML">Portfólios</a></li>
+                    <li class="Menu_Item"><a class="Menu_Link" href="index.html">Início</a></li>
                     <li class="Menu_Item"><a class="Menu_Link_Materias" href="Materias.HTML" aria-current="page">Matérias</a></li>
-                    <li class="Menu_Item"><a class="Menu_Link" href="index.html">Menu</a></li>
+                    <li class="Menu_Item"><a class="Menu_portifolios" href="Portifolio.HTML">Portfólios</a></li>
                 </ul>
             </nav>
         </header>
 
-        
+        <section class="Atividade" id="lista-atividades">
+            <div class="area-cabecalho">
+                <p class="area-cabecalho__eyebrow" data-entrada="0">Projeto e Pesquisa Escolar</p>
+                <h1 class="area-cabecalho__titulo" data-entrada="1">PPE</h1>
+                <p class="area-cabecalho__texto" data-entrada="2">
+                    O PPE é o projeto de pesquisa que atravessa o ano letivo, unindo o que aprendo nas
+                    demais áreas em uma única entrega. Esta página vai reunir o problema investigado,
+                    as etapas do desenvolvimento e os resultados obtidos.
+                </p>
+            </div>
+
+            <article class="atividade-card atividade-card--pendente">
+                <div class="atividade-card__cabecalho">
+                    <div class="atividade-card__marcadores">
+                        <span class="atividade-card__status">Em desenvolvimento</span>
+                    </div>
+                    <h2 class="atividade-card__titulo">Projeto em andamento</h2>
+                    <p class="atividade-card__resumo">
+                        As entregas do PPE ainda estão em construção. Assim que as etapas forem
+                        concluídas, elas aparecerão aqui com evidências, documentação e a crítica
+                        pessoal sobre o processo.
+                    </p>
+                </div>
+
+                <div class="atividade-aviso">
+                    <strong>Enquanto isso</strong>
+                    <p>Você pode conferir os projetos já concluídos na área Técnico, onde estão os
+                        trabalhos de programação e de IoT dos dois trimestres.</p>
+                </div>
+
+                <div class="atividade-acoes">
+                    <a class="btn link-atividade atividade-acao" href="Tecnico.HTML">Ver projetos técnicos</a>
+                    <a class="btn link-atividade atividade-acao" href="Materias.HTML">Voltar às matérias</a>
+                </div>
+            </article>
+        </section>
+
     </main>
 </body>
 </html>
-
-

@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Matérias do portfólio escolar de Cleyton: Português, Matemática, Natureza, Humanas, Técnico e PPE.">
+    <meta name="description" content="Matérias do portfólio escolar de Cleyton: Linguagens, Matemática, Natureza, Humanas, Técnico e PPE.">
+    <meta name="theme-color" content="#06060c">
     <title>Matérias</title>
     <link rel="stylesheet" href="index.CSS">
     <link rel="stylesheet" href="Materias.CSS">
+    <link rel="stylesheet" href="Experiencia.CSS">
+    <script src="Experiencia.js"></script>
 </head>
-<body>
+<body class="pagina-materias">
     <video class="bg-video" autoplay muted loop playsinline>
         <source src="Video/Tela_de_Fundo.mp4" type="video/mp4">
     </video>
@@ -16,208 +19,149 @@
 
     <main class="page">
         <header class="top-bar">
-            <nav class="Nav_Menu">
+            <span class="marca">
+                <span class="marca__texto">Cleyton Pedroza<span>Portfólio</span></span>
+            </span>
+            <nav class="Nav_Menu" aria-label="Navegação principal">
                 <ul>
+                    <li class="Menu_Item"><a class="Menu_Link" href="index.html">Início</a></li>
+                    <li class="Menu_Item"><a class="Menu_Link_Materias" href="Materias.HTML" aria-current="page">Matérias</a></li>
                     <li class="Menu_Item"><a class="Menu_portifolios" href="Portifolio.HTML">Portfólios</a></li>
-                    <li class="Menu_Item"><a class="Menu_Link" href="index.html">Menu</a></li>
                 </ul>
             </nav>
         </header>
 
         <section class="section_materias">
             <div class="materias__hero">
-                <div class="materias__hero-copy">
-                    <p class="materias__eyebrow">Portfólio Escolar</p>
-                    <h1 class="materias__heading">Minhas matérias</h1>
-                    
-                </div>
-
-                
+                <p class="eyebrow" data-entrada="0">Portfólio escolar</p>
+                <h1 class="materias__heading" data-entrada="1">Minhas <span>matérias</span></h1>
             </div>
 
-            <div class="materias__carousel">
-                <button class="materias__control materias__control--prev" type="button" aria-label="Ver matérias anteriores">
-                    &#10094;
-                </button>
-
-                <div class="materias__viewport">
-                    <div class="materias__grid">
-                        <a class="materia__card materia__card--portugues" href="Portugues.HTML">
-                            <div class="materia__img-wrapper">
-                                <img src="Fotos_materias/Portugues.png" alt="Linguagens">
-                            </div>
-                            <div class="materia__body">
-                                <span class="materia__tag">Linguagens</span>
-                                <span class="materia__title">Linguagens</span>
-                               
-                                <p class="materia__text">Leitura, escrita, argumentação e Língua Inglesa nos dois trimestres.</p>
-                            </div>
+            <div class="roda-bloco" data-entrada="4">
+                <div class="roda-palco" id="rodaPalco" tabindex="0" aria-label="Roda de matérias — arraste ou use as setas do teclado">
+                    <div class="roda" id="roda">
+                        <a class="carta carta--linguagens" href="Portugues.HTML" style="--i:0">
+                            <span class="carta__topo">
+                                <span class="carta__indice">01</span>
+                                <span class="carta__tag">Português · Inglês</span>
+                            </span>
+                            <span class="carta__simbolo" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 6.4C10.4 4.9 8.4 4.4 4 4.4v13.2c4.4 0 6.4.5 8 2 1.6-1.5 3.6-2 8-2V4.4c-4.4 0-6.4.5-8 2Z"/>
+                                    <path d="M12 6.4v13.2"/>
+                                </svg>
+                            </span>
+                            <span class="carta__rodape">
+                                <span class="carta__titulo">Linguagens</span>
+                                <span class="carta__meta">1º e 2º trimestre</span>
+                                <span class="carta__cta">Ver atividades <i aria-hidden="true">&#8594;</i></span>
+                            </span>
                         </a>
 
-                        <a class="materia__card materia__card--matematica" href="Matematica.HTML">
-                            <div class="materia__img-wrapper">
-                                <img src="Fotos_materias/Matematica.png" alt="Matemática">
-                            </div>
-                            <div class="materia__body">
-                                <span class="materia__tag">Exatas</span>
-                                <span class="materia__title">Matemática</span>
-                                
-                                <p class="materia__text">Muitos números e contas divertidas :)</p>
-                            </div>
+                        <a class="carta carta--matematica" href="Matematica.HTML" style="--i:1">
+                            <span class="carta__topo">
+                                <span class="carta__indice">02</span>
+                                <span class="carta__tag">Exatas</span>
+                            </span>
+                            <span class="carta__simbolo" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M4.5 3.5v17"/>
+                                    <path d="M4.5 20.5h16"/>
+                                    <path d="M4.5 16.5c4.2 0 5-9.5 8.4-9.5 3.4 0 3.8 5.2 7.6 5.2"/>
+                                </svg>
+                            </span>
+                            <span class="carta__rodape">
+                                <span class="carta__titulo">Matemática</span>
+                                <span class="carta__meta">1º e 2º trimestre</span>
+                                <span class="carta__cta">Ver atividades <i aria-hidden="true">&#8594;</i></span>
+                            </span>
                         </a>
 
-                        <a class="materia__card materia__card--natureza" href="Natureza.HTML">
-                            <div class="materia__img-wrapper">
-                                <img src="Fotos_materias/Natureza.png" alt="Natureza">
-                            </div>
-                            <div class="materia__body">
-                                <span class="materia__tag">Ciências</span>
-                                <span class="materia__title">Natureza</span>
-                                
-                                <p class="materia__text">Como o mundo funciona, muito interessante :)</p>
-                            </div>
+                        <a class="carta carta--natureza" href="Natureza.HTML" style="--i:2">
+                            <span class="carta__topo">
+                                <span class="carta__indice">03</span>
+                                <span class="carta__tag">Ciências</span>
+                            </span>
+                            <span class="carta__simbolo" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M4.6 19.4c0-8.4 5.2-13.6 14.8-13.6 0 9.4-5.2 13.6-14.8 13.6Z"/>
+                                    <path d="M4.6 19.4c2.1-4.2 5.3-6.9 9.4-8.4"/>
+                                </svg>
+                            </span>
+                            <span class="carta__rodape">
+                                <span class="carta__titulo">Natureza</span>
+                                <span class="carta__meta">1º e 2º trimestre</span>
+                                <span class="carta__cta">Ver atividades <i aria-hidden="true">&#8594;</i></span>
+                            </span>
                         </a>
 
-                        <a class="materia__card materia__card--humanas" href="Humanas.HTML">
-                            <div class="materia__img-wrapper">
-                                <img src="Fotos_materias/Humanas.png" alt="Humanas">
-                            </div>
-                            <div class="materia__body">
-                                <span class="materia__tag">Sociedade</span>
-                                <span class="materia__title">Humanas</span>
-                                
-                                <p class="materia__text">Política, história e guerra :)</p>
-                            </div>
+                        <a class="carta carta--humanas" href="Humanas.HTML" style="--i:3">
+                            <span class="carta__topo">
+                                <span class="carta__indice">04</span>
+                                <span class="carta__tag">Sociedade</span>
+                            </span>
+                            <span class="carta__simbolo" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="8.2"/>
+                                    <path d="M3.8 12h16.4"/>
+                                    <path d="M12 3.8c2.6 2.4 4 5.2 4 8.2s-1.4 5.8-4 8.2c-2.6-2.4-4-5.2-4-8.2s1.4-5.8 4-8.2Z"/>
+                                </svg>
+                            </span>
+                            <span class="carta__rodape">
+                                <span class="carta__titulo">Humanas</span>
+                                <span class="carta__meta">1º e 2º trimestre</span>
+                                <span class="carta__cta">Ver atividades <i aria-hidden="true">&#8594;</i></span>
+                            </span>
                         </a>
 
-                        <a class="materia__card materia__card--tecnico" href="Tecnico.HTML">
-                            <div class="materia__img-wrapper">
-                                <img src="Fotos_materias/Tecnico.png" alt="Técnico">
-                            </div>
-                            <div class="materia__body">
-                                <span class="materia__tag">Curso técnico</span>
-                                <span class="materia__title">Técnico</span>
-                                <p class="materia__meta">Seção própria</p>
-                                <p class="materia__text">Programação, desenvolvimento de sistemas e projetos de IoT.</p>
-                            </div>
+                        <a class="carta carta--tecnico" href="Tecnico.HTML" style="--i:4">
+                            <span class="carta__topo">
+                                <span class="carta__indice">05</span>
+                                <span class="carta__tag">Curso técnico</span>
+                            </span>
+                            <span class="carta__simbolo" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M8.6 7.6 3.8 12l4.8 4.4"/>
+                                    <path d="M15.4 7.6 20.2 12l-4.8 4.4"/>
+                                    <path d="M13.4 4.8 10.6 19.2"/>
+                                </svg>
+                            </span>
+                            <span class="carta__rodape">
+                                <span class="carta__titulo">Técnico</span>
+                                <span class="carta__meta">1º e 2º trimestre</span>
+                                <span class="carta__cta">Ver atividades <i aria-hidden="true">&#8594;</i></span>
+                            </span>
                         </a>
 
-                        <a class="materia__card materia__card--ppe" href="PPE.HTML">
-                            <div class="materia__img-wrapper">
-                                <img src="Fotos_materias/PPE.png" alt="PPE">
-                            </div>
-                            <div class="materia__body">
-                                <span class="materia__tag">Projeto</span>
-                                <span class="materia__title">PPE</span>
-                                <p class="materia__meta">Em desenvolvimento</p>
-                                <p class="materia__text">Projeto e Pesquisa Escolar em desenvolvimento.</p>
-                            </div>
+                        <a class="carta carta--ppe" href="PPE.HTML" style="--i:5">
+                            <span class="carta__topo">
+                                <span class="carta__indice">06</span>
+                                <span class="carta__tag">Projeto</span>
+                            </span>
+                            <span class="carta__simbolo" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9.4 18.4h5.2"/>
+                                    <path d="M10.2 21.2h3.6"/>
+                                    <path d="M12 2.8a6.2 6.2 0 0 0-3.6 11.3c.6.5 1 1.3 1 2.1h5.2c0-.8.4-1.6 1-2.1A6.2 6.2 0 0 0 12 2.8Z"/>
+                                </svg>
+                            </span>
+                            <span class="carta__rodape">
+                                <span class="carta__titulo">PPE</span>
+                                <span class="carta__meta">Em desenvolvimento</span>
+                                <span class="carta__cta">Ver atividades <i aria-hidden="true">&#8594;</i></span>
+                            </span>
                         </a>
                     </div>
                 </div>
 
-                <button class="materias__control materias__control--next" type="button" aria-label="Ver próximas matérias">
-                    &#10095;
-                </button>
+                <p class="roda-dica">
+                    <span class="roda-dica__seta" aria-hidden="true">&#8596;</span>
+                    Arraste com o mouse para girar
+                </p>
             </div>
         </section>
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const slider = document.querySelector(".materias__grid");
-            const prevButton = document.querySelector(".materias__control--prev");
-            const nextButton = document.querySelector(".materias__control--next");
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-            let isDragging = false;
-
-            if (!slider) {
-                return;
-            }
-
-            const updateControls = () => {
-                if (!prevButton || !nextButton) {
-                    return;
-                }
-
-                const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-                prevButton.disabled = slider.scrollLeft <= 8;
-                nextButton.disabled = slider.scrollLeft >= maxScrollLeft - 8;
-            };
-
-            const scrollCards = (direction) => {
-                const firstCard = slider.querySelector(".materia__card");
-                const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 300;
-                const gap = 28;
-
-                slider.scrollBy({
-                    left: direction * (cardWidth + gap),
-                    behavior: "smooth"
-                });
-            };
-
-            slider.addEventListener("mousedown", (e) => {
-                isDown = true;
-                isDragging = false;
-                slider.style.cursor = "grabbing";
-                slider.style.scrollSnapType = "none";
-                startX = e.pageX - slider.offsetLeft;
-                scrollLeft = slider.scrollLeft;
-            });
-
-            slider.addEventListener("mouseleave", () => {
-                isDown = false;
-                slider.style.cursor = "grab";
-                slider.style.scrollSnapType = "x mandatory";
-            });
-
-            slider.addEventListener("mouseup", () => {
-                isDown = false;
-                slider.style.cursor = "grab";
-                slider.style.scrollSnapType = "x mandatory";
-            });
-
-            slider.addEventListener("mousemove", (e) => {
-                if (!isDown) return;
-
-                e.preventDefault();
-                isDragging = true;
-                const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX) * 2;
-                slider.scrollLeft = scrollLeft - walk;
-                updateControls();
-            });
-
-            slider.querySelectorAll(".materia__card").forEach((card) => {
-                card.addEventListener("click", (e) => {
-                    if (isDragging) {
-                        e.preventDefault();
-                    }
-                });
-            });
-
-            slider.addEventListener("wheel", (e) => {
-                if (e.deltaY !== 0) {
-                    e.preventDefault();
-                    slider.scrollLeft += e.deltaY;
-                    updateControls();
-                }
-            });
-
-            slider.addEventListener("scroll", updateControls);
-
-            if (prevButton) {
-                prevButton.addEventListener("click", () => scrollCards(-1));
-            }
-
-            if (nextButton) {
-                nextButton.addEventListener("click", () => scrollCards(1));
-            }
-
-            updateControls();
-        });
-    </script>
+    <script src="Roleta.js" defer></script>
 </body>
 </html>
