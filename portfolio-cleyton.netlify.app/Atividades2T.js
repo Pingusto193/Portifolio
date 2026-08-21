@@ -225,18 +225,23 @@ const ATIVIDADES_SEGUNDO_TRIMESTRE = {
     },
     {
       nome: "Portfólio Digital de Eletroquímica",
-      resumo: "Atividade opcional reservada para a futura inclusão do vídeo experimental.",
-      descricao: "A proposta opcional aborda conceitos de eletroquímica em formato de portfólio digital. O material experimental necessário para documentar a atividade ainda não foi fornecido.",
-      justificativa: "A seção permanece preparada sem registrar a atividade como concluída, preservando a veracidade do portfólio até que o vídeo seja disponibilizado.",
+      resumo: "Atividade opcional em formato de site, com o vídeo experimental produzido pelo grupo.",
+      descricao: "A proposta opcional aborda conceitos de eletroquímica em formato de portfólio digital, publicado como um site próprio produzido pelo grupo, reunindo o vídeo experimental e o material da atividade.",
+      justificativa: "A atividade relaciona conceitos de eletroquímica a uma produção experimental documentada em vídeo, publicada em site próprio do grupo.",
       competencias: [COMPETENCIAS_NATUREZA.C2],
       habilidades: [
         HABILIDADES_NATUREZA.H7,
         HABILIDADES_NATUREZA.H9,
         HABILIDADES_NATUREZA.H11
       ],
-      status: "Opcional — vídeo pendente",
-      videoPendente: true,
-      pendente: true
+      status: "Opcional — concluída",
+      links: [
+        {
+          label: "Abrir portfólio digital de Eletroquímica",
+          url: "https://atividade-natureza-bizarra.netlify.app/",
+          externo: true
+        }
+      ]
     }
   ],
   humanas: [
@@ -826,7 +831,7 @@ function criarPainelSegundoTrimestre(chave, atividades) {
   texto.appendChild(criarElemento("h2", "trimestre-cabecalho__titulo", "2º Trimestre"));
   let resumoTrimestre = `${atividades.length} ${atividades.length === 1 ? "atividade documentada" : "atividades documentadas"}.`;
   if (chave === "natureza") {
-    resumoTrimestre = "3 atividades obrigatórias e 1 opcional com vídeo pendente.";
+    resumoTrimestre = "3 atividades obrigatórias e 1 opcional, todas concluídas.";
   } else if (chave === "humanas") {
     resumoTrimestre = "3 atividades selecionadas e 1 material extra com trabalho final pendente.";
   }
