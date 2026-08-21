@@ -1,0 +1,1 @@
+Durante a simulação no Tinkercad, o sensor de temperatura realizou as leituras corretamente. Quando a temperatura permaneceu abaixo de 28 °C, o LED ficou apagado. Ao ultrapassar esse limite, o LED acendeu, indicando que o ambiente estava em condição crítica.

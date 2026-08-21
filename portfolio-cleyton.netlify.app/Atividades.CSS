@@ -157,3 +157,686 @@
     width: 100%;
   }
 }
+
+/* Organização por trimestre e cartões documentais do 2º trimestre */
+
+body[data-materia="portugues"] { --area-accent: #f97316; --area-accent-rgb: 249, 115, 22; }
+body[data-materia="matematica"] { --area-accent: #38bdf8; --area-accent-rgb: 56, 189, 248; }
+body[data-materia="natureza"] { --area-accent: #22c55e; --area-accent-rgb: 34, 197, 94; }
+body[data-materia="humanas"] { --area-accent: #ef4444; --area-accent-rgb: 239, 68, 68; }
+body[data-materia="tecnico"] { --area-accent: #a78bfa; --area-accent-rgb: 167, 139, 250; }
+
+.area-cabecalho {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  gap: 12px;
+  padding: clamp(26px, 5vw, 48px);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(var(--area-accent-rgb), 0.24), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025)),
+    rgba(8, 8, 12, 0.58);
+  box-shadow: var(--shadow, 0 16px 40px rgba(0, 0, 0, 0.5));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.area-cabecalho::after {
+  content: "02";
+  position: absolute;
+  right: clamp(18px, 5vw, 56px);
+  bottom: -0.2em;
+  z-index: -1;
+  color: rgba(255, 255, 255, 0.045);
+  font: 700 clamp(120px, 21vw, 240px) / 1 "Cocogoose", sans-serif;
+}
+
+.area-cabecalho__eyebrow,
+.atividade-grupo__eyebrow {
+  margin: 0;
+  color: var(--area-accent);
+  font: 700 12px / 1.4 "Cocogoose", sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.area-cabecalho__titulo {
+  max-width: 920px;
+  margin: 0;
+  color: #fff;
+  font: 700 clamp(38px, 6.2vw, 72px) / 1.05 "Paper Noise", "Cocogoose", sans-serif;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.48);
+}
+
+.area-cabecalho__texto {
+  max-width: 790px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font: 400 clamp(16px, 2vw, 19px) / 1.7 "KGPerfectPenmanship", sans-serif;
+}
+
+.trimestre-abas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 620px);
+  margin: 0 auto;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(8, 8, 12, 0.64);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.trimestre-aba {
+  min-height: 50px;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  font: 700 15px / 1 "Cocogoose", sans-serif;
+  transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.trimestre-aba:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.trimestre-aba:focus-visible,
+.atividade-codigo__copiar:focus-visible,
+.evidencia-zoom:focus-visible,
+.evidencia-lightbox__fechar:focus-visible {
+  outline: 3px solid rgba(var(--area-accent-rgb), 0.76);
+  outline-offset: 3px;
+}
+
+.trimestre-aba--ativa {
+  background: linear-gradient(135deg, rgba(var(--area-accent-rgb), 0.94), rgba(var(--area-accent-rgb), 0.58));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(var(--area-accent-rgb), 0.26);
+}
+
+.trimestre-painel {
+  display: grid;
+  gap: 32px;
+}
+
+.trimestre-painel[hidden] {
+  display: none !important;
+}
+
+.trimestre-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 24px;
+  border-left: 4px solid var(--area-accent);
+  border-radius: 0 18px 18px 0;
+  background: linear-gradient(90deg, rgba(var(--area-accent-rgb), 0.13), rgba(12, 12, 16, 0.48));
+}
+
+.trimestre-cabecalho__numero {
+  margin: 0;
+  color: var(--area-accent);
+  font: 700 clamp(38px, 6vw, 62px) / 1 "Cocogoose", sans-serif;
+  opacity: 0.74;
+}
+
+.trimestre-cabecalho__titulo {
+  margin: 0 0 5px;
+  color: #fff;
+  font: 700 clamp(27px, 4vw, 38px) / 1.15 "Paper Noise", "Cocogoose", sans-serif;
+}
+
+.trimestre-cabecalho__texto {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font: 400 16px / 1.5 "KGPerfectPenmanship", sans-serif;
+}
+
+.trimestre-lista {
+  display: grid;
+  gap: 32px;
+}
+
+.atividade-grupo {
+  display: grid;
+  gap: 24px;
+}
+
+.atividade-grupo + .atividade-grupo {
+  margin-top: 24px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.atividade-grupo__cabecalho {
+  display: grid;
+  gap: 8px;
+}
+
+.atividade-grupo__titulo {
+  max-width: 900px;
+  margin: 0;
+  color: #fff;
+  font: 700 clamp(27px, 4vw, 42px) / 1.15 "Paper Noise", "Cocogoose", sans-serif;
+  text-wrap: balance;
+}
+
+.atividade-card {
+  position: relative;
+  display: grid;
+  gap: 28px;
+  overflow: hidden;
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.018)),
+    rgba(9, 9, 13, 0.72);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.atividade-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--area-accent), transparent 74%);
+}
+
+.atividade-card--pendente {
+  border-style: dashed;
+  background: rgba(9, 9, 13, 0.6);
+}
+
+.atividade-card__cabecalho {
+  display: grid;
+  gap: 13px;
+}
+
+.atividade-card__marcadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.atividade-card__trimestre,
+.atividade-card__status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 30px;
+  padding: 6px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  font: 700 11px / 1 "Cocogoose", sans-serif;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.atividade-card__trimestre {
+  border-color: rgba(var(--area-accent-rgb), 0.38);
+  background: rgba(var(--area-accent-rgb), 0.14);
+  color: var(--area-accent);
+}
+
+.atividade-card__status {
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.atividade-card__titulo {
+  max-width: 1000px;
+  margin: 0;
+  color: #fff;
+  font: 700 clamp(28px, 4.4vw, 44px) / 1.15 "KGPerfectPenmanship", cursive;
+  text-wrap: balance;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.48);
+}
+
+.atividade-card__resumo {
+  max-width: 920px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font: 400 clamp(17px, 2vw, 20px) / 1.6 "KGPerfectPenmanship", sans-serif;
+}
+
+.atividade-card__integrantes {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font: 400 14px / 1.55 "Cocogoose", sans-serif;
+}
+
+.atividade-evidencias,
+.atividade-detalhe,
+.atividade-codigo {
+  display: grid;
+  gap: 13px;
+}
+
+.atividade-detalhe__titulo {
+  margin: 0;
+  color: var(--area-accent);
+  font: 700 13px / 1.4 "Cocogoose", sans-serif;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.atividade-detalhe__texto,
+.atividade-detalhe__lista {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font: 400 17px / 1.72 "KGPerfectPenmanship", sans-serif;
+}
+
+.atividade-detalhe__lista {
+  display: grid;
+  gap: 9px;
+  padding-left: 22px;
+}
+
+.atividade-detalhe__lista li::marker {
+  color: var(--area-accent);
+}
+
+.evidencia-video {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(var(--area-accent-rgb), 0.34);
+  border-radius: 16px;
+  background: #050506;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.42);
+}
+
+.evidencia-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 720px;
+  background: #000;
+  object-fit: contain;
+}
+
+.evidencia-video__legenda {
+  margin: 0;
+  padding: 12px 14px;
+  color: rgba(255, 255, 255, 0.76);
+  font: 400 13px / 1.45 "Segoe UI", Arial, sans-serif;
+}
+
+.evidencia-imagem {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #fff;
+  cursor: zoom-in;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.34);
+}
+
+.evidencia-imagem img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.evidencia-imagem:hover img {
+  transform: scale(1.025);
+  filter: brightness(1.06);
+}
+
+.evidencia-imagem--principal img {
+  height: clamp(280px, 50vw, 560px);
+}
+
+.evidencia-imagem__legenda {
+  display: block;
+  min-height: 44px;
+  padding: 11px 14px;
+  color: rgba(255, 255, 255, 0.76);
+  font: 400 13px / 1.45 "Cocogoose", sans-serif;
+}
+
+.evidencia-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+  gap: 14px;
+}
+
+.documento-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 17px;
+  align-items: center;
+  min-height: 112px;
+  padding: 20px;
+  border: 1px solid rgba(var(--area-accent-rgb), 0.28);
+  border-radius: 17px;
+  background:
+    radial-gradient(circle at right top, rgba(var(--area-accent-rgb), 0.15), transparent 45%),
+    rgba(255, 255, 255, 0.045);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.22s ease, border-color 0.22s ease, background-color 0.22s ease;
+}
+
+.documento-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(var(--area-accent-rgb), 0.72);
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+.documento-card__selo {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 64px;
+  border-radius: 10px;
+  background: var(--area-accent);
+  color: #08080b;
+  font: 700 13px / 1 "Cocogoose", sans-serif;
+}
+
+.documento-card__corpo {
+  display: grid;
+  gap: 6px;
+}
+
+.documento-card__titulo {
+  font: 700 18px / 1.35 "KGPerfectPenmanship", sans-serif;
+}
+
+.documento-card__descricao {
+  color: rgba(255, 255, 255, 0.66);
+  font: 400 14px / 1.5 "Cocogoose", sans-serif;
+}
+
+.documento-card__seta {
+  color: var(--area-accent);
+  font-size: 28px;
+}
+
+.evidencia-placeholder {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 15px;
+  align-items: center;
+  padding: 18px 20px;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.evidencia-placeholder--video {
+  min-height: 150px;
+  background:
+    linear-gradient(135deg, rgba(var(--area-accent-rgb), 0.12), transparent),
+    rgba(255, 255, 255, 0.025);
+}
+
+.evidencia-placeholder__icone {
+  display: grid;
+  place-items: center;
+  min-width: 46px;
+  min-height: 46px;
+  padding: 8px;
+  border-radius: 50%;
+  background: rgba(var(--area-accent-rgb), 0.16);
+  color: var(--area-accent);
+  font: 700 14px / 1 "Cocogoose", sans-serif;
+}
+
+.evidencia-placeholder div {
+  display: grid;
+  gap: 5px;
+}
+
+.evidencia-placeholder strong {
+  color: #fff;
+  font: 700 15px / 1.4 "Cocogoose", sans-serif;
+}
+
+.evidencia-placeholder span:not(.evidencia-placeholder__icone) {
+  color: rgba(255, 255, 255, 0.66);
+  font: 400 14px / 1.5 "KGPerfectPenmanship", sans-serif;
+}
+
+.atividade-codigo {
+  min-width: 0;
+}
+
+.atividade-codigo__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.atividade-codigo__copiar {
+  min-height: 38px;
+  padding: 8px 13px;
+  border: 1px solid rgba(var(--area-accent-rgb), 0.36);
+  border-radius: 9px;
+  background: rgba(var(--area-accent-rgb), 0.12);
+  color: #fff;
+  cursor: pointer;
+  font: 700 12px / 1 "Cocogoose", sans-serif;
+}
+
+.atividade-codigo__bloco {
+  max-width: 100%;
+  max-height: 520px;
+  margin: 0;
+  overflow: auto;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  background: #08090c;
+  color: #d7f9df;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
+  font: 400 14px / 1.65 Consolas, "Courier New", monospace;
+  tab-size: 2;
+  white-space: pre;
+}
+
+.atividade-aviso {
+  display: grid;
+  gap: 8px;
+  padding: 17px 19px;
+  border-left: 3px solid var(--area-accent);
+  border-radius: 0 12px 12px 0;
+  background: rgba(var(--area-accent-rgb), 0.09);
+}
+
+.atividade-aviso strong {
+  color: var(--area-accent);
+  font: 700 13px / 1.4 "Cocogoose", sans-serif;
+}
+
+.atividade-aviso p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font: 400 15px / 1.6 "KGPerfectPenmanship", sans-serif;
+}
+
+.atividade-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  padding-top: 3px;
+}
+
+.atividade-acao {
+  min-height: 46px;
+  background: rgba(var(--area-accent-rgb), 0.13);
+  border-color: rgba(var(--area-accent-rgb), 0.35);
+}
+
+.atividade-acao:hover {
+  background: var(--area-accent);
+  border-color: var(--area-accent);
+  color: #08080b;
+}
+
+.evidencia-lightbox {
+  width: min(94vw, 1180px);
+  max-width: none;
+  max-height: 92vh;
+  margin: auto;
+  padding: 52px 16px 16px;
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background: rgba(6, 6, 9, 0.96);
+  color: #fff;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.78);
+}
+
+.evidencia-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.86);
+  backdrop-filter: blur(7px);
+}
+
+.evidencia-lightbox__fechar {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  font: 700 12px / 1 "Cocogoose", sans-serif;
+}
+
+.evidencia-lightbox__imagem {
+  display: block;
+  width: 100%;
+  max-height: calc(92vh - 105px);
+  margin: 0 auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.evidencia-lightbox__legenda {
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font: 400 14px / 1.45 "Cocogoose", sans-serif;
+  text-align: center;
+}
+
+/*
+ * A versao trial de Cocogoose substitui algarismos por uma marca d'agua.
+ * Metadados do trimestre usam uma fonte do sistema para manter datas,
+ * contagens, notas e numeros de paginas legiveis.
+ */
+.area-cabecalho::after,
+.area-cabecalho__eyebrow,
+.trimestre-aba,
+.trimestre-cabecalho__numero,
+.atividade-card__trimestre,
+.atividade-card__status,
+.evidencia-imagem__legenda,
+.documento-card__descricao,
+.evidencia-lightbox__legenda {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+@media screen and (max-width: 700px) {
+  .area-cabecalho {
+    border-radius: 20px;
+  }
+
+  .area-cabecalho::after {
+    right: 8px;
+  }
+
+  .trimestre-abas {
+    border-radius: 18px;
+  }
+
+  .trimestre-aba {
+    min-height: 46px;
+    padding-inline: 10px;
+    border-radius: 13px;
+    font-size: 12px;
+  }
+
+  .trimestre-cabecalho {
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .atividade-card {
+    gap: 23px;
+    border-radius: 19px;
+  }
+
+  .evidencia-imagem--principal img {
+    height: clamp(230px, 68vw, 390px);
+  }
+
+  .evidencia-galeria {
+    grid-template-columns: 1fr;
+  }
+
+  .evidencia-imagem img {
+    height: auto;
+    max-height: 390px;
+    object-fit: contain;
+    background: #0b0b0e;
+  }
+
+  .documento-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .documento-card__seta {
+    display: none;
+  }
+
+  .atividade-codigo__cabecalho {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .atividade-codigo__copiar,
+  .atividade-acoes,
+  .atividade-acao {
+    width: 100%;
+  }
+
+  .atividade-codigo__bloco {
+    padding: 16px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trimestre-aba,
+  .documento-card,
+  .evidencia-imagem img {
+    transition: none;
+  }
+}

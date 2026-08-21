@@ -1,0 +1,33 @@
+ORIENTAÇÕES PASTADAS PELO ESTUDANTE — RESUMO DE FONTE
+
+GERAL SESI:
+- Site único com todos os trimestres.
+- Atividades por área e trimestre.
+- Cada atividade: título, descrição, justificativa e habilidades.
+- Evidências, fotos, registros, extras e certificados.
+- Site/link público e testado.
+
+PROGRAMAÇÃO:
+- Projeto BP Promotora de Crédito.
+- Título, breve descrição, habilidades, explicação da solução, link GitHub, README com explicação e arquitetura.
+- H1, H4, H6.
+
+IOT:
+- Cada atividade: título, descrição, protótipo, código, fotos, justificativa, habilidades.
+- Acender LED; Semáforo; Controle de LED com botão - Desafio Lógica Toggle.
+
+LINGUAGENS:
+- Videomanifesto: H3, H24.
+- Inglês “Que tipo de arte você consome?”: H25.
+- Print da Nota do Red1000 2T: H22.
+- Certificado Olimpíada de Literatura se houver.
+- Para cada atividade: habilidades, objetivo, assunto e crítica pessoal educacional.
+
+MATEMÁTICA:
+- AV1 2T - Apresentação Estatística.
+- C4; H27, H28, H29.
+
+HUMANAS:
+- Escolher três atividades.
+- Cada uma: título, descrição, habilidades, imagem ilustrativa e link do material completo.
+- Se não houver habilidade no material, procurar professor; não inventar.

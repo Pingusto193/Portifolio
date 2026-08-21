@@ -362,7 +362,16 @@ function criarCard(materia, atividade) {
   return article;
 }
 
+window.PORTFOLIO_PRIMEIRO_TRIMESTRE = {
+  materias: MATERIAS_PORTFOLIO,
+  criarCard
+};
+
 document.addEventListener("DOMContentLoaded", () => {
+  if (window.PORTFOLIO_TRIMESTRES_ATIVO) {
+    return;
+  }
+
   const materiaKey = document.body.dataset.materia;
   const container = document.getElementById("lista-atividades");
   const materia = MATERIAS_PORTFOLIO[materiaKey];

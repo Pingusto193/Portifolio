@@ -7,9 +7,10 @@
     <title>Técnico</title>
     <link rel="stylesheet" href="index.CSS">
     <link rel="stylesheet" href="Tecnico.CSS">
+    <link rel="stylesheet" href="Atividades.CSS">
 </head>
-<body class="page-tecnico">
-    <video class="bg-video" autoplay muted loop playsinline poster="https://portfolio-cleyton.netlify.app/Video/bg-poster.jpg">
+<body class="page-tecnico" data-materia="tecnico">
+    <video class="bg-video" autoplay muted loop playsinline>
         <source src="Video/Tela_de_Fundo.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
@@ -25,7 +26,7 @@
             </nav>
         </header>
 
-        <section class="Atividade">
+        <section class="Atividade" id="lista-atividades">
             <article class="conteudo">
                 <div class="box_img">
                     <img class="img_exemplo" src="Foto_atividades/cyber-domestic.svg" alt="Prévia da atividade Cyber_Domestic">
@@ -57,7 +58,7 @@
             <article class="conteudo">
                 <div class="box_img">
 
-                        <img class="img_exemplo" src="Foto_atividades/exemplo.jpg" alt="">
+                        <img class="img_exemplo" src="Foto_atividades/exemplo.jpg" alt="Imagem de exemplo da atividade técnica">
 
                 </div>
                 <div class="descricao">
@@ -66,11 +67,13 @@
                         <h2 class="Assunto">Assunto:</h2>
                         <h2 class="Critica_pessoal">Crítica pessoal:</h2>
 
-                        <a class="btn link-atividade" href="https://exemplo.com" target="_blank">Acessar Atividade</a>
+                        <a class="btn link-atividade" href="https://exemplo.com" target="_blank" rel="noopener noreferrer">Acessar Atividade</a>
                 </div>
             </article>
         </section>
 
     </main>
+    <script src="Atividades.js" defer></script>
+    <script src="Atividades2T.js" defer></script>
 </body>
 </html>

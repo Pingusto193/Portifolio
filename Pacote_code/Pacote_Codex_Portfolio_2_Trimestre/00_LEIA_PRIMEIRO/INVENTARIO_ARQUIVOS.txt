@@ -1,0 +1,115 @@
+INVENTÁRIO DO PACOTE — PORTFÓLIO 2º TRIMESTRE
+
+00_LEIA_PRIMEIRO/LEIA_PRIMEIRO.txt | 633 bytes | sha256:a92fe815d15de193
+00_LEIA_PRIMEIRO/PROMPT_CODEX_PORTFOLIO_2T.docx | 53332 bytes | sha256:c6ef8f4df4f971e2
+00_LEIA_PRIMEIRO/PROMPT_CODEX_PORTFOLIO_2T.md | 40678 bytes | sha256:03f7df44ee626b15
+01_ORIENTACOES/Ciencias_da_Natureza_Orientacoes_2T.pdf | 297720 bytes | sha256:57761f1c66295bad
+01_ORIENTACOES/Orientacoes_pastadas_pelo_estudante.txt | 1223 bytes | sha256:e76ee7b11c712e26
+02_PROGRAMACAO/BP_Promotora_de_Credito/Projeto_RinhaSenai2026FullStack_original.zip | 87190 bytes | sha256:eddd0bdcf7fa5790
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/.gitignore | 193 bytes | sha256:dc7f6d242aa5ccd9
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/index.html | 387 bytes | sha256:4704531333f8431c
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/package-lock.json | 46864 bytes | sha256:1d46e111d88dae99
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/package.json | 354 bytes | sha256:78b4d977581d73aa
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/public/favicon.svg | 431 bytes | sha256:2ba3562bfbd85fb8
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/App.jsx | 1873 bytes | sha256:0fc929c3f6a10640
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/api/account.js | 806 bytes | sha256:9a8768984b6fcf0a
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/api/auth.js | 378 bytes | sha256:843225f5d4e25a61
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/api/client.js | 978 bytes | sha256:a1d91f47c6818f97
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/api/dashboard.js | 228 bytes | sha256:484ceb8652040e3d
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/api/expenses.js | 255 bytes | sha256:b0bfbe8865af578a
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/api/friends.js | 196 bytes | sha256:a7c6b26db4a95eaf
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/api/investments.js | 539 bytes | sha256:df7c8ca3b6c1365f
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/api/transfers.js | 288 bytes | sha256:76f1dd528ac5e308
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/components/BalanceHeader.jsx | 331 bytes | sha256:d570ef1a29b45c73
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/components/BrandMark.jsx | 1123 bytes | sha256:0637deb7fa593436
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/components/DirectionIcon.jsx | 773 bytes | sha256:9edd6c7ccb3eafea
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/components/EyeIcon.jsx | 921 bytes | sha256:5a48eeaf034e8112
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/components/HideableBalance.jsx | 789 bytes | sha256:bd1425c53452b13b
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/components/Navbar.jsx | 1449 bytes | sha256:d2b3d4509ad18a2e
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/components/PeriodFilter.jsx | 540 bytes | sha256:df2ea6652a2b40ac
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/components/ProtectedRoute.jsx | 306 bytes | sha256:97b6f26ff9b548e9
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/context/AuthContext.jsx | 1352 bytes | sha256:5f54a3abe69e39e6
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/index.css | 16014 bytes | sha256:09672941335e56e1
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/main.jsx | 418 bytes | sha256:03e5278fede244a0
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/Account.jsx | 7578 bytes | sha256:5d703cf0184531d2
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/Dashboard.jsx | 4919 bytes | sha256:b532ff60c3017081
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/Expenses.jsx | 2948 bytes | sha256:fd08707fb1573f2f
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/Friends.jsx | 2402 bytes | sha256:21ac9975245f2fd4
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/Invest.jsx | 4359 bytes | sha256:2ceb01f080dd6a47
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/InvestChart.jsx | 2116 bytes | sha256:4dd138b603856d36
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/Landing.jsx | 3281 bytes | sha256:ad82ff8edd80f389
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/Ledger.jsx | 2521 bytes | sha256:05ab76f7e9af9ddd
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/Login.jsx | 1686 bytes | sha256:c32a0971fd5de478
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/Register.jsx | 2006 bytes | sha256:c1458f2c1de50177
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/src/pages/Transfer.jsx | 4081 bytes | sha256:22a058f527839cf6
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/frontend/vite.config.js | 288 bytes | sha256:1edc08fb18a7ac19
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/package-lock.json | 106961 bytes | sha256:99b42d0d80369550
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/package.json | 778 bytes | sha256:bd3e92dbcb4f9d8b
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/prisma/schema.prisma | 3588 bytes | sha256:9a254e005b60d8d4
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/prisma.config.ts | 163 bytes | sha256:eb700976a7fd01b3
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/server.js | 1244 bytes | sha256:a4f9c814063e4370
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/db.js | 244 bytes | sha256:9b0743481073e434
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/lib/accrual.js | 1599 bytes | sha256:4d7719a034c4092a
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/lib/dateKey.js | 982 bytes | sha256:481c6e9b60bda2ac
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/lib/jwt.js | 309 bytes | sha256:7bcc7a7635648ffe
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/lib/password.js | 223 bytes | sha256:858f42ae96b9d7ae
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/lib/personalCode.js | 612 bytes | sha256:33bb024521f4612b
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/lib/streak.js | 1044 bytes | sha256:64faac3a8b106e8c
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/middleware/requireAuth.js | 342 bytes | sha256:eaae64796adf9720
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/routes/account.js | 4540 bytes | sha256:a7cbcd506ebb2dcf
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/routes/auth.js | 3039 bytes | sha256:adb3d04fb110c499
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/routes/dashboard.js | 3661 bytes | sha256:35430837fb9d1918
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/routes/expenses.js | 1503 bytes | sha256:3a28ba2d4d6ea8a8
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/routes/friends.js | 1743 bytes | sha256:09cb509db8688428
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/routes/investments.js | 4292 bytes | sha256:26fd64237e510695
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/src/routes/transfers.js | 2702 bytes | sha256:dce75a358124b076
+02_PROGRAMACAO/BP_Promotora_de_Credito/projeto_extraido/RinhaSenai2026FullStack-main/uploads/avatars/.gitkeep | 0 bytes | sha256:e3b0c44298fc1c14
+03_IOT/01_Acender_LED/acender_led.ino | 244 bytes | sha256:928ca2ed39c22342
+03_IOT/01_Acender_LED/prototipo_acender_led.png | 92230 bytes | sha256:39150d6636c40173
+03_IOT/02_Semaforo/prototipo_semaforo.png | 106318 bytes | sha256:c545c6d8c012cdfe
+03_IOT/02_Semaforo/semaforo.ino | 717 bytes | sha256:231bf9ea91a0e930
+03_IOT/03_LED_com_Botao_Toggle/NOTA_TECNICA.txt | 585 bytes | sha256:ee1abb9c9a35f57f
+03_IOT/03_LED_com_Botao_Toggle/led_com_botao.ino | 343 bytes | sha256:9ae0a7fe72c93c3a
+03_IOT/03_LED_com_Botao_Toggle/prototipo_reutilizado_led_com_botao.png | 92230 bytes | sha256:39150d6636c40173
+03_IOT/04_EXTRA_SmartClass_IoT/SmartClass_IoT_original.zip | 2532268 bytes | sha256:2b19be0fe7ad73ad
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/31ab28ba-99dd-4ee5-9301-96753041b9e5 (1).png | 2353738 bytes | sha256:01d9c5abc5f11dc5
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/apresentação/1.png | 60974 bytes | sha256:3afc619bd2cf1b2e
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/apresentação/2.png | 113005 bytes | sha256:978832b7df0d50b7
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/codigo/Funky Albar-Hango.brd | 32398 bytes | sha256:02f59217cac276a9
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/relatorio/Análise de testes.txt | 264 bytes | sha256:e4cb7acc8bfc65ef
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/relatorio/Objetivo.txt | 175 bytes | sha256:32af7a3ebd0eb2b2
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/relatorio/Problema.txt | 190 bytes | sha256:074901d454982fcc
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/relatorio/Tabela de Testes.png | 9582 bytes | sha256:d4ea4f9dc3b03b8c
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/site/Site Link.txt | 44 bytes | sha256:332abe83a7aff977
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/site/index.css | 791 bytes | sha256:869c9f11a942ba16
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/site/index.html | 2528 bytes | sha256:143f94bdd2ebe638
+03_IOT/04_EXTRA_SmartClass_IoT/projeto_extraido/SA_SmartClassIoT_Cleyton e Gustavo Ramos/site/index.zip | 1698 bytes | sha256:4a6f2e77a34da2d9
+04_LINGUAGENS/01_Videomanifesto/analise_manifesto_digital.pdf | 48425 bytes | sha256:a1dcb24e6acc3995
+04_LINGUAGENS/01_Videomanifesto/videomanifesto.mov | 200724394 bytes | sha256:a8a5920cfb39a433
+04_LINGUAGENS/02_Ingles_What_kind_of_art/what_kind_of_art_do_you_consume.pdf | 46070 bytes | sha256:8b83fb09f152b568
+04_LINGUAGENS/03_Red1000/red1000_nota_600.png | 39213 bytes | sha256:ccc0d36eebb4c59e
+05_MATEMATICA/AV1_Estatistica/AV1_Estatistica_Habitos_de_exercicio_fisico.pdf | 6711119 bytes | sha256:8cc41e9b0cfacb59
+06_CIENCIAS_DA_NATUREZA/01_Mural_Interativo_Poluicao_do_Solo/mural_interativo_poluicao_do_solo.jpeg | 127121 bytes | sha256:cc5471c37f11ced2
+06_CIENCIAS_DA_NATUREZA/02_Estequiometria_Industria_Acido_Sulfurico/Seminario_Estequiometria_Producao_Acido_Sulfurico.pdf | 7420403 bytes | sha256:156bedbe0ed8ba0e
+06_CIENCIAS_DA_NATUREZA/03_Cartilha_Eletricidade_e_Corpo_Humano/Cartilha_Eletricidade_Corpo_Humano_original.zip | 2356692 bytes | sha256:b8e5c5e48cfa0724
+06_CIENCIAS_DA_NATUREZA/03_Cartilha_Eletricidade_e_Corpo_Humano/cartilha_paginas/1.png | 263634 bytes | sha256:e4f0138994bbab97
+06_CIENCIAS_DA_NATUREZA/03_Cartilha_Eletricidade_e_Corpo_Humano/cartilha_paginas/2.png | 302422 bytes | sha256:5b400d6923ee5da1
+06_CIENCIAS_DA_NATUREZA/03_Cartilha_Eletricidade_e_Corpo_Humano/cartilha_paginas/3.png | 774451 bytes | sha256:da794603cc42ed2c
+06_CIENCIAS_DA_NATUREZA/03_Cartilha_Eletricidade_e_Corpo_Humano/cartilha_paginas/4.png | 385564 bytes | sha256:af972f3f9c1b08a4
+06_CIENCIAS_DA_NATUREZA/03_Cartilha_Eletricidade_e_Corpo_Humano/cartilha_paginas/5.png | 323415 bytes | sha256:958b0c8404b1cc3d
+06_CIENCIAS_DA_NATUREZA/03_Cartilha_Eletricidade_e_Corpo_Humano/cartilha_paginas/6.png | 306080 bytes | sha256:4af02a4a7c210be0
+06_CIENCIAS_DA_NATUREZA/04_OPCIONAL_Eletroquimica/LEIA-ME.txt | 287 bytes | sha256:1cbbe19f68eb022e
+07_CIENCIAS_HUMANAS/01_Temas_Contemporaneos_Call_of_Duty_Cold_War/Call_of_Duty_Cold_War_slides_original.zip | 19577005 bytes | sha256:cc3cfb701fdf98df
+07_CIENCIAS_HUMANAS/01_Temas_Contemporaneos_Call_of_Duty_Cold_War/LINK_CANVA.txt | 189 bytes | sha256:6d903c383dc5eb29
+07_CIENCIAS_HUMANAS/01_Temas_Contemporaneos_Call_of_Duty_Cold_War/slides_extraidos/1.png | 2584419 bytes | sha256:db20e1b8616ebe76
+07_CIENCIAS_HUMANAS/01_Temas_Contemporaneos_Call_of_Duty_Cold_War/slides_extraidos/2.png | 3605679 bytes | sha256:81d96f308b0516d0
+07_CIENCIAS_HUMANAS/01_Temas_Contemporaneos_Call_of_Duty_Cold_War/slides_extraidos/3.png | 3231207 bytes | sha256:fc5cbd3696f810d7
+07_CIENCIAS_HUMANAS/01_Temas_Contemporaneos_Call_of_Duty_Cold_War/slides_extraidos/4.png | 3944477 bytes | sha256:435f3be4a0ad85ff
+07_CIENCIAS_HUMANAS/01_Temas_Contemporaneos_Call_of_Duty_Cold_War/slides_extraidos/5.png | 2981313 bytes | sha256:d519c310b362a0db
+07_CIENCIAS_HUMANAS/01_Temas_Contemporaneos_Call_of_Duty_Cold_War/slides_extraidos/6.png | 3228784 bytes | sha256:06978da286a2b853
+07_CIENCIAS_HUMANAS/02_Cinema_e_Totalitarismo_Homem_de_Ferro/Cinema_e_Totalitarismo_Homem_de_Ferro.pdf | 2341553 bytes | sha256:e88641291e86599c
+07_CIENCIAS_HUMANAS/03_Reorganizacao_do_Mundo_apos_1945/reorganizacao_mundo_apos_1945_foto_1.jpg | 584208 bytes | sha256:8e5a94ecaf05f8d0
+07_CIENCIAS_HUMANAS/03_Reorganizacao_do_Mundo_apos_1945/reorganizacao_mundo_apos_1945_foto_2.jpg | 667188 bytes | sha256:9d50dfc400ef5c35
+07_CIENCIAS_HUMANAS/04_MATERIAL_EXTRA_Dossie_Historico_Queda_da_Franca/NAO_USAR_COMO_3A_ATIVIDADE_SEM_MATERIAL_FINAL.txt | 374 bytes | sha256:94ffb546c7e046f8
+07_CIENCIAS_HUMANAS/04_MATERIAL_EXTRA_Dossie_Historico_Queda_da_Franca/Orientacao_Dossie_Historico_Queda_da_Franca.pdf | 150733 bytes | sha256:4dd098dbabaa2392
+99_PENDENCIAS_E_VIDEOS/LEIA-ME_VIDEOS_E_PENDENCIAS.txt | 1005 bytes | sha256:2f0d6ce8a56e4e64

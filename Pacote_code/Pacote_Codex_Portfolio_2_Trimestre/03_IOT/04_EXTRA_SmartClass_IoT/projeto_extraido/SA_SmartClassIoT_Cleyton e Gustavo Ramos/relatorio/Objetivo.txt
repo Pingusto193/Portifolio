@@ -1,0 +1,1 @@
+Desenvolver um sistema IoT para medir a temperatura e a umidade de uma sala de aula, mostrar os dados em uma tela e emitir um alerta quando o ambiente estiver desconfortável.

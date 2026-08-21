@@ -1,0 +1,10 @@
+Este pacote foi preparado para ser enviado ao Codex junto com o projeto existente do portfólio do 1º trimestre.
+
+PASSOS:
+1. Abra o arquivo PROMPT_CODEX_PORTFOLIO_2T.md (ou a versão DOCX).
+2. Coloque este pacote no mesmo workspace em que estiver o código do portfólio do 1º trimestre.
+3. Peça ao Codex para seguir integralmente o PROMPT MESTRE e usar os arquivos nas pastas como evidências.
+4. Não apague o 1º trimestre.
+5. Os vídeos e algumas pendências serão adicionados depois pelo estudante.
+
+A versão Markdown é a mais indicada para o Codex porque mantém os caminhos dos arquivos fáceis de copiar e interpretar.

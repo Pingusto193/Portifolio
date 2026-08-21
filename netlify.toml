@@ -1,8 +1,0 @@
-[build]
-  publish = "portfolio-cleyton.netlify.app"
-
-[[headers]]
-  for = "/*"
-
-  [headers.values]
-    X-Content-Type-Options = "nosniff"

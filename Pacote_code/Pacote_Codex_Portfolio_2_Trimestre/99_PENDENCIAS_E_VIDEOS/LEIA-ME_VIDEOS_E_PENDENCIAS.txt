@@ -1,0 +1,7 @@
+PENDÊNCIAS ASSUMIDAS PELO ESTUDANTE
+
+1. O estudante informou que colocará os vídeos depois. O Codex deve deixar espaços/slots claros para vídeos quando a atividade exigir, sem bloquear o restante do site.
+2. O vídeo de Eletroquímica opcional ainda não foi enviado.
+3. Não foi enviado certificado da Olimpíada de Literatura; não mostrar esta atividade como concluída.
+4. Habilidades oficiais da atividade “Reorganização do Mundo após 1945” não foram fornecidas. Não inventar códigos de habilidades. Exibir uma nota interna/placeholder para posterior preenchimento ou omitir essa terceira atividade até o estudante fornecer as habilidades, conforme a decisão do usuário.
+5. O portfólio do 1º trimestre não foi anexado neste pacote. O Codex deve trabalhar SOBRE o projeto/site existente do 1º trimestre no workspace e preservar tudo. Se esse projeto não estiver no workspace, deve parar e pedir ao usuário os arquivos do site do 1º trimestre antes de reconstruir a interface.
