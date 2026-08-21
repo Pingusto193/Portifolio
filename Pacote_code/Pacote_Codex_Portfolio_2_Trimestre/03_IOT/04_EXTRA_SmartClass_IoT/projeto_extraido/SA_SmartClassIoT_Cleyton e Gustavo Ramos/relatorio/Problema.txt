@@ -1,1 +1,0 @@
-A sala de aula pode apresentar calor, ambiente abafado e variações de temperatura. Como não tem um modo automático de verificação do ambiente, fica apenas na verificação das pessoas.

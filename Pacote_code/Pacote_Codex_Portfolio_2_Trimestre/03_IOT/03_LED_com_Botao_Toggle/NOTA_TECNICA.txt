@@ -1,5 +1,0 @@
-O título oficial solicitado pelo professor é “Controle de LED com botão - Desafio Lógica Toggle”.
-O código enviado pelo estudante lê o estado de um botão no pino 4 usando INPUT_PULLUP e informa o estado no Monitor Serial.
-Ele NÃO implementa, no estado atual, uma alternância persistente (toggle) do LED.
-No portfólio, exibir o título oficial e o código exatamente como entregue, mas não afirmar que o código alterna o LED se isso não estiver demonstrado.
-A imagem usada nesta atividade foi indicada pelo estudante como a mesma imagem da atividade “Acender LED”.
