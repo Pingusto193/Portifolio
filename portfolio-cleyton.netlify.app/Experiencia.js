@@ -72,7 +72,7 @@
   /* ----------------------------------------------------------- tela de entrada */
 
   function montarIntro() {
-    var nome = "CLEYTON PEDROZA";
+    var nome = "CLEYTON RODRIGUES PEDROZA";
     var letras = nome
       .split("")
       .map(function (letra, i) {
