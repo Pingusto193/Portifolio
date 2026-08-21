@@ -67,20 +67,15 @@ const ATIVIDADES_SEGUNDO_TRIMESTRE = {
         titulo: "Análise do Manifesto Digital",
         descricao: "Evidência em PDF · 1 página"
       },
-      video: {
-        url: `${ASSETS_2T}/linguagens/videomanifesto.mov`,
-        titulo: "Videomanifesto sobre o Manifesto Antropófago e o Manifesto Pau-Brasil",
-        legenda: "Produção audiovisual entregue para a atividade."
-      },
       links: [
         {
           label: "Abrir análise em PDF",
           url: `${ASSETS_2T}/linguagens/manifesto-digital.pdf`
         },
         {
-          label: "Baixar vídeo original (.mov)",
-          url: `${ASSETS_2T}/linguagens/videomanifesto.mov`,
-          download: true
+          label: "Assistir ao vídeo no Google Drive",
+          url: "https://drive.google.com/file/d/1rTGEEopMrjmIGcDecm7Z6ttiH6ggpOYH/view?usp=sharing",
+          externo: true
         }
       ]
     },
