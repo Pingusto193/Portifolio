@@ -629,6 +629,7 @@ function criarImagemAmpliavel(item, classe = "evidencia-imagem") {
   imagem.alt = item.alt;
   imagem.loading = "lazy";
   if (item.fit) imagem.style.objectFit = item.fit;
+  if (item.proporcao) imagem.style.aspectRatio = item.proporcao;
   if (item.posicao) imagem.style.objectPosition = item.posicao;
   botao.appendChild(imagem);
 
@@ -666,6 +667,7 @@ function criarEvidencias(atividade) {
       alt: atividade.imagemAlt,
       legenda: atividade.legenda,
       fit: atividade.imagemFit,
+      proporcao: atividade.imagemProporcao,
       posicao: atividade.imagemPosicao
     }, "evidencia-imagem evidencia-imagem--principal"));
   }

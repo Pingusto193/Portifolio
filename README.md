@@ -27,10 +27,9 @@ Os dados dos dois primeiros trimestres não foram alterados. Os links externos a
 
 - **Biologia — Ciclos biogeoquímicos:** painel ou apresentação final. A orientação e a referência do professor estão identificadas separadamente.
 - **Matemática — Ciclo trigonométrico:** apresentação final. O cartão mantém apenas o link da orientação.
-- **Redação — Imagine / ENEM:** captura da redação sobre leitura crítica, descrita no pedido como tendo nota 720. Ela não está no projeto nem nos anexos recebidos. O cartão reserva o espaço e não reproduz o texto da redação nem usa a nota como substituição.
 - **Brasil dos anos de 1950 e Guerra Fria — 1960 a 1980:** capas ou imagens das respectivas apresentações. Os links fornecidos foram mantidos; a consulta automática não disponibilizou imagens verificáveis desses trabalhos.
 
-Para adicionar a captura da redação, copie o arquivo para `portfolio-cleyton.netlify.app/Assets_3T/linguagens/` e informe seu caminho no campo `imagem` do cartão em `Atividades3T.js`, com `imagemAlt`, `legenda` e, se houver miniatura separada, `imagemOriginal`. Remova `imagemPendente`, atualize `status` e `aviso`, e retire `pendente` quando o registro estiver disponível. A ampliação usa a mesma caixa de diálogo das demais evidências. Nunca aponte para um arquivo que ainda não existe.
+A captura da redação está em `portfolio-cleyton.netlify.app/Foto_atividades/nota-redacao.png` e aparece no cartão da Imagine / ENEM com a nota de **720 pontos**. A imagem mantém sua proporção e pode ser ampliada pelo mesmo mecanismo das demais evidências. Ela registra o tema e a nota; o texto integral da redação e um link de entrega não foram fornecidos.
 
 ## Imagem disponível e verificação de links
 

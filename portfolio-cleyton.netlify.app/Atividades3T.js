@@ -90,13 +90,13 @@ window.PORTFOLIO_TERCEIRO_TRIMESTRE = {
       reflexao: "A atividade me ajudou a desenvolver os argumentos e perceber a importância da revisão para deixar o texto mais claro.",
       competencias: ["C4 — Produzir textos orais e escritos para diferentes propósitos de comunicação."],
       habilidades: ["H22 — Produzir textos técnicos de acordo com uma estrutura estabelecida."],
-      pendente: true,
-      status: "Captura da redação ainda não disponível",
-      imagemPendente: {
-        titulo: "Espaço reservado para o print da redação na Imagine",
-        descricao: "A captura desta redação ainda precisa ser adicionada ao portfólio."
-      },
-      aviso: "O arquivo da captura não foi encontrado nos recursos recebidos. O texto integral da redação e um link de entrega não foram fornecidos."
+      status: "Nota: 720 pontos",
+      imagem: "Foto_atividades/nota-redacao.png",
+      imagemAlt: "Captura da Imagine com o tema sobre leitura crítica e a nota de 720 pontos",
+      imagemFit: "contain",
+      imagemProporcao: "auto",
+      legenda: "Registro da redação na Imagine — 720 pontos · clique para ampliar",
+      aviso: "A captura registra o tema e a nota. O texto integral da redação e um link de entrega não foram fornecidos."
     }
   ],
   humanas: [
