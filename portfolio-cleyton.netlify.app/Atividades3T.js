@@ -77,10 +77,8 @@ window.PORTFOLIO_TERCEIRO_TRIMESTRE = {
       reflexao: "A atividade aproximou o estudo de manifestações artísticas do meu interesse por programação e me ajudou a perceber como a organização das páginas influencia a leitura.",
       competencias: ["C3 — Articular aspectos das identidades em textos e manifestações artísticas e culturais, considerando as práticas sociais e linguagens utilizadas."],
       habilidades: ["H15 — Produzir trabalhos individuais e coletivos, explorando materiais e técnicas ligados a composições artísticas e práticas corporais."],
-      status: "Site com acesso restrito",
-      aviso: "O site publicado solicitou login na verificação de acesso. O código da narrativa também está disponível no GitHub, no link abaixo.",
       links: [
-        { label: "Visitar Secos e Molhados (requer acesso)", url: "https://jocular-mooncake-201409.netlify.app/" },
+        { label: "Visitar Secos e Molhados", url: "https://gregarious-dolphin-97db43.netlify.app/" },
         { label: "Ver código da narrativa no GitHub", url: "https://github.com/Pingusto193/AtividadeSecosEMolhados" },
         { label: "Ver orientação da narrativa no Classroom", url: "https://classroom.google.com/c/NzkzNDg2Mzg1Nzgy/a/ODc3MDgxNjQ0ODcy/details" }
       ]

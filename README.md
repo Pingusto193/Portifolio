@@ -38,7 +38,7 @@ A imagem de Aurora do Brasil foi recuperada da prévia pública do documento for
 
 Os documentos e a apresentação de referência do Google usam `/preview` no mesmo ID fornecido, para abrir a visualização. Os links do Canva, Drive, Classroom, Netlify e GitHub preservam os destinos fornecidos. Uma resposta HTTP bem-sucedida de um serviço não garante que todo visitante tenha acesso ao trabalho: páginas de login e proteções contra consultas automáticas podem limitar a verificação.
 
-Na verificação de 14/11/2026, o site da narrativa Secos e Molhados retornou HTTP 401 e uma página de login; essa restrição está indicada no cartão, que também oferece o repositório acessível no GitHub. As orientações do Classroom, a apresentação do professor de Biologia e a imagem molecular do Drive redirecionaram para login. Os documentos de Química e Aurora do Brasil, o link do vídeo e os três links do Canva responderam HTTP 200; o Canva não expôs capas dos trabalhos na consulta. Nenhum acesso ou permissão foi alterado.
+O link da narrativa Secos e Molhados foi atualizado para `https://gregarious-dolphin-97db43.netlify.app/`, fornecido pelo estudante, e respondeu HTTP 200 na verificação. O aviso de acesso restrito referente ao endereço anterior foi removido. O cartão também oferece o repositório no GitHub. As orientações do Classroom, a apresentação do professor de Biologia e a imagem molecular do Drive redirecionaram para login. Os documentos de Química e Aurora do Brasil, o link do vídeo e os três links do Canva responderam HTTP 200; o Canva não expôs capas dos trabalhos na consulta. Nenhum acesso ou permissão foi alterado.
 
 ## Verificações realizadas
 
