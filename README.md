@@ -25,9 +25,10 @@ Os dados dos dois primeiros trimestres não foram alterados. Os links externos a
 
 ## Materiais ainda necessários
 
-- **Biologia — Ciclos biogeoquímicos:** painel ou apresentação final. A orientação e a referência do professor estão identificadas separadamente.
 - **Matemática — Ciclo trigonométrico:** apresentação final. O cartão mantém apenas o link da orientação.
 - **Brasil dos anos de 1950 e Guerra Fria — 1960 a 1980:** capas ou imagens das respectivas apresentações. Os links fornecidos foram mantidos; a consulta automática não disponibilizou imagens verificáveis desses trabalhos.
+
+O trabalho de **Biologia — Ciclos biogeoquímicos** está disponível no link do Canva fornecido pelo estudante: `https://canva.link/hlw7f4llubmyigc`. O aviso de entrega pendente foi removido; a orientação e a referência do professor continuam identificadas separadamente como apoio.
 
 A captura da redação está em `portfolio-cleyton.netlify.app/Foto_atividades/nota-redacao.png` e aparece no cartão da Imagine / ENEM com a nota de **720 pontos**. A imagem mantém sua proporção e pode ser ampliada pelo mesmo mecanismo das demais evidências. Ela registra o tema e a nota; o texto integral da redação e um link de entrega não foram fornecidos.
 

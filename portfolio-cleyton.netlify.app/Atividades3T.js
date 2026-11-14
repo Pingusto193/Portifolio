@@ -11,10 +11,9 @@ window.PORTFOLIO_TERCEIRO_TRIMESTRE = {
         "H11 — Empregar observação, hipóteses, experimentação, coleta de dados e conclusões.",
         "H24 — Descrever propriedades físicas, químicas e/ou biológicas dos materiais e relacioná-las às finalidades."
       ],
-      pendente: true,
-      status: "Entrega ainda não localizada",
-      aviso: "O painel ou a apresentação final ainda precisa ser inserido. Os links abaixo levam à orientação da atividade e ao material de referência do professor; não são uma produção minha. A referência do professor solicita login.",
+      aviso: "A orientação e a referência do professor são materiais de apoio, separados do meu trabalho. A referência do professor solicita login.",
       links: [
+        { label: "Abrir trabalho de Biologia — Ciclos biogeoquímicos", url: "https://canva.link/hlw7f4llubmyigc" },
         { label: "Ver orientação de Biologia no Classroom", url: "https://classroom.google.com/c/NzkzNDg2Mzg1Nzgy/a/ODc1NTgxMDEyNzQy/details" },
         { label: "Ver referência do professor sobre os ciclos", url: "https://docs.google.com/presentation/d/1CqM2QWrBgA2lW8QyNlgWvNrHFf1X2Ir-6fcBw3nO-8o/preview" }
       ]
