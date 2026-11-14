@@ -619,7 +619,7 @@ function criarDocumento(documento) {
 function criarImagemAmpliavel(item, classe = "evidencia-imagem") {
   const botao = criarElemento("button", `${classe} evidencia-zoom`);
   botao.type = "button";
-  botao.dataset.imagem = item.src;
+  botao.dataset.imagem = item.original || item.src;
   botao.dataset.alt = item.alt;
   botao.dataset.legenda = item.legenda || item.alt;
   botao.setAttribute("aria-label", `Ampliar: ${item.legenda || item.alt}`);
@@ -640,7 +640,7 @@ function criarImagemAmpliavel(item, classe = "evidencia-imagem") {
 
 function criarEvidencias(atividade) {
   const possuiEvidencia = atividade.video || atividade.imagem || atividade.documento || atividade.galeria ||
-    atividade.videoPendente || atividade.montagemPendente || atividade.codigoPendente;
+    atividade.videoPendente || atividade.montagemPendente || atividade.codigoPendente || atividade.imagemPendente;
   if (!possuiEvidencia) return null;
 
   const bloco = criarElemento("section", "atividade-evidencias");
@@ -662,6 +662,7 @@ function criarEvidencias(atividade) {
   if (atividade.imagem) {
     bloco.appendChild(criarImagemAmpliavel({
       src: atividade.imagem,
+      original: atividade.imagemOriginal,
       alt: atividade.imagemAlt,
       legenda: atividade.legenda,
       fit: atividade.imagemFit,
@@ -708,6 +709,17 @@ function criarEvidencias(atividade) {
     bloco.appendChild(placeholder);
   }
 
+  if (atividade.imagemPendente) {
+    const placeholder = criarElemento("div", "evidencia-placeholder");
+    const icone = criarElemento("span", "evidencia-placeholder__icone", "▧");
+    icone.setAttribute("aria-hidden", "true");
+    const texto = criarElemento("div", "");
+    texto.appendChild(criarElemento("strong", "", atividade.imagemPendente.titulo));
+    texto.appendChild(criarElemento("span", "", atividade.imagemPendente.descricao));
+    placeholder.append(icone, texto);
+    bloco.appendChild(placeholder);
+  }
+
   return bloco;
 }
 
@@ -748,11 +760,11 @@ function criarAcoes(links = []) {
   return acoes;
 }
 
-function criarCardSegundoTrimestre(atividade) {
+function criarCardSegundoTrimestre(atividade, trimestre = 2) {
   const artigo = criarElemento("article", `atividade-card${atividade.pendente ? " atividade-card--pendente" : ""}`);
   const cabecalho = criarElemento("header", "atividade-card__cabecalho");
   const marcadores = criarElemento("div", "atividade-card__marcadores");
-  marcadores.appendChild(criarElemento("span", "atividade-card__trimestre", "2º trimestre"));
+  marcadores.appendChild(criarElemento("span", "atividade-card__trimestre", `${trimestre}º trimestre`));
   if (atividade.status) marcadores.appendChild(criarElemento("span", "atividade-card__status", atividade.status));
   cabecalho.appendChild(marcadores);
   cabecalho.appendChild(criarElemento("h2", "atividade-card__titulo", atividade.nome));
@@ -863,10 +875,11 @@ function criarPainelSegundoTrimestre(chave, atividades) {
   return painel;
 }
 
-function criarAbas(chave, painelPrimeiro, painelSegundo) {
+function criarAbas(chave, ...paineis) {
   const abas = criarElemento("div", "trimestre-abas");
   abas.setAttribute("role", "tablist");
   abas.setAttribute("aria-label", "Selecionar trimestre");
+  abas.style.setProperty("--trimestre-colunas", paineis.length);
 
   const criarAba = (numero, texto, painel) => {
     const botao = criarElemento("button", "trimestre-aba", texto);
@@ -879,7 +892,10 @@ function criarAbas(chave, painelPrimeiro, painelSegundo) {
     return botao;
   };
 
-  abas.append(criarAba(1, "1º Trimestre", painelPrimeiro), criarAba(2, "2º Trimestre", painelSegundo));
+  paineis.forEach((painel) => {
+    const numero = Number(painel.dataset.trimestre);
+    abas.appendChild(criarAba(numero, `${numero}º Trimestre`, painel));
+  });
   return abas;
 }
 
@@ -970,8 +986,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const painelPrimeiro = criarPainelPrimeiroTrimestre(chave, container, materiaOriginal);
   const painelSegundo = criarPainelSegundoTrimestre(chave, atividades);
-  const abas = criarAbas(chave, painelPrimeiro, painelSegundo);
-  container.replaceChildren(criarCabecalhoArea(configuracao), abas, painelPrimeiro, painelSegundo);
+  const paineis = [painelPrimeiro, painelSegundo];
+  const atividadesTerceiro = window.PORTFOLIO_TERCEIRO_TRIMESTRE?.[chave];
+  if (atividadesTerceiro) {
+    paineis.push(criarPainelTerceiroTrimestre(chave, atividadesTerceiro));
+  }
+  const abas = criarAbas(chave, ...paineis);
+  container.replaceChildren(criarCabecalhoArea(configuracao), abas, ...paineis);
 
   container.addEventListener("click", (evento) => {
     const aba = evento.target.closest(".trimestre-aba");
@@ -1017,5 +1038,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const trimestreUrl = new URLSearchParams(window.location.search).get("trimestre");
-  ativarTrimestre(container, trimestreUrl === "1" ? 1 : 2, false);
+  const trimestreInicial = paineis.some((painel) => painel.dataset.trimestre === trimestreUrl)
+    ? Number(trimestreUrl) : 2;
+  ativarTrimestre(container, trimestreInicial, false);
 });
